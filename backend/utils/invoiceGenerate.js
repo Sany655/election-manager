@@ -1,0 +1,68 @@
+var PDFDocument = require('pdfkit');
+var fs = require('fs');
+
+// Function to create the invoice
+ const invoiceGenerate = (order, filePath,dataCallback, endCallback) => {
+  const doc = new PDFDocument({bufferPages: true, font: 'Courier' , margin: 50 });
+  doc.on('data', dataCallback);
+  doc.on('end', endCallback);
+  // Pipe the PDF into a writable stream
+  doc.pipe(fs.createWriteStream(filePath));
+
+  // Header
+  doc
+    .fontSize(20)
+    .text('Invoice', { align: 'center' });
+
+  // Order Details
+  doc
+    .fontSize(12)
+    .text(`Order ID: ${order.id}`, { align: 'left' })
+    .text(`Order Date: ${new Date(order.createdAt).toLocaleDateString()}`, { align: 'left' })
+    .moveDown();
+
+  // User Details
+  doc
+    .text(`Customer Name: ${order.user.firstName}`, { align: 'left' })
+    .text(`Email: ${order.user.email}`, { align: 'left' })
+    .moveDown();
+
+  // Shipping Details
+  doc
+    .text(`Shipping Address:`, { align: 'left' })
+    .text(`${order.shippingAddress.address}`, { align: 'left' })
+    .text(`${order.shippingAddress.city}, ${order.shippingAddress.postalCode}`, { align: 'left' })
+    .text(`${order.shippingAddress.country}`, { align: 'left' })
+    .moveDown();
+
+  // Order Items
+  doc
+    .fontSize(14)
+    .text(`Order Items:`, { align: 'left' })
+    .moveDown();
+
+  order.orderItems.forEach(item => {
+    doc
+      .fontSize(12)
+      .text(`${item.name} - ${item.qty} x $${item.price} = $${item.qty * item.price}`, { align: 'left' })
+      .moveDown(0.5);
+  });
+
+  // Total Price
+  doc
+    .fontSize(12)
+    .text(`Tax: $${order.taxPrice}`, { align: 'left' })
+    .text(`Shipping: $${order.shippingPrice}`, { align: 'left' })
+    .text(`Total: $${order.totalPrice}`, { align: 'left' })
+    .moveDown();
+
+  // Footer
+  doc
+    .fontSize(12)
+    .text('Thank you for your purchase!', { align: 'center' });
+
+  // Finalize PDF file
+  doc.end();
+};
+
+module.exports = invoiceGenerate

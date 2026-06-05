@@ -1,0 +1,1 @@
+module.exports.per_page = 8;
