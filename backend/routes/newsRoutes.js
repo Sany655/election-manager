@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const newsController = require('../controllers/newsController');
-const { checkPermission } = require('../middlewares/authMiddleware');
+const { checkPermission } = require('../middleware/authMiddleware');
 
 router.get('/', newsController.getAllNews);
 router.post('/', checkPermission('manage-news'), newsController.createNews);
