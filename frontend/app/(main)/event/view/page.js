@@ -71,9 +71,9 @@ const page = async ({ searchParams }) => {
     const volunteerTeams = await fetchVolunteerTeams(token);
 
     return (
-        <DefaultLayout title='All Event'>
+        <DefaultLayout title='All Activities'>
             <ProtectedRoute permissions={['view-events']}>
-                <ViewTable data={policy.data} users={users.data} volunteer_teams={volunteerTeams.data} title='Event' />
+                <ViewTable data={policy.data} users={users.data} volunteer_teams={volunteerTeams.data} title='Activity' />
             </ProtectedRoute>
         </DefaultLayout>
     )

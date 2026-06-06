@@ -62,17 +62,12 @@ export function AuthProvider({ children }) {
           setRoles(userData?.roles || []);
           setPermissions(userData?.roles?.[0]?.permissions || []);
 
-          // Check permission directly from the response data
-          // const userHasManualAttendancePermission = userData?.roles?.some(role =>
-          //   role.permissions?.some(perm => perm.name === 'take-manual-attendance')
-          // );
-
-          // // Redirect based on permission
-          // if (userHasManualAttendancePermission) {
-          //   router.push('/attendance/manual');
-          // } else {
-          //   router.push('/');
-          // }
+          // Redirect based on role
+          const isCandidate = userData?.roles?.some(role => role.name === 'candidate');
+          if (isCandidate) {
+            router.push('/candidate-portal');
+            return;
+          }
         }
         router.push('/');
       } else {

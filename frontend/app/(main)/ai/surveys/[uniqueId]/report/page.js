@@ -187,7 +187,7 @@ export default function SurveyReport() {
 
     return (
         <DefaultLayout title={"Survey Report"}>
-            <ProtectedRoute>
+            <ProtectedRoute permissions={['view-surveys']}>
                 {loading ? (
                     <LoadingState message="Loading Analytics Report..." />
                 ) : !data ? (

@@ -14,19 +14,16 @@ module.exports = {
         await queryInterface.bulkInsert('departments', [
             {
                 name: 'Engineering',
-                company_id: companyId,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
             {
                 name: 'HR',
-                company_id: companyId,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
             {
                 name: 'Administration',
-                company_id: companyId,
                 createdAt: new Date(),
                 updatedAt: new Date()
             }

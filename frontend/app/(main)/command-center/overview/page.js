@@ -60,7 +60,7 @@ const CommandCenterOverview = () => {
 
     return (
         <DefaultLayout>
-            <ProtectedRoute>
+            <ProtectedRoute permissions={['view-command-center']}>
                 <div className="p-6">
                     <h1 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Command Center Overview</h1>
 

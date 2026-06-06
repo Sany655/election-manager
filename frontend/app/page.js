@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import DefaultLayout from "./components/layout/DefaultLayout";
 import ProtectedRoute from "@/app/components/ProtectedRoute";
 import Loader from "./components/Loader";
+import { useAuthContext } from "@/app/context/auth_context";
 import {
   FaUsers,
   FaUserCheck,
@@ -36,6 +37,7 @@ const iconMap = {
 };
 
 export default function DashboardPage() {
+  const { hasPermission } = useAuthContext();
   const [stats, setStats] = useState({
     voterStats: {
       totalVoters: 0,
@@ -90,58 +92,68 @@ export default function DashboardPage() {
       icon: FaFire,
       color: "from-blue-500 to-blue-600",
       stats: { score: stats.socialAnalytics?.engagementScore || 0, label: "Interactions" },
-      link: "/ai/social-analytics"
+      link: "/ai/social-analytics",
+      permission: "view-social-analytics"
     },
     {
       name: "Social Sentiment",
       icon: FaComments,
       color: "from-indigo-500 to-indigo-600",
       stats: { score: `${stats.socialAnalytics?.sentimentScore || 0}%`, label: "Positive" },
-      link: "/ai/social-analytics"
+      link: "/ai/social-analytics",
+      permission: "view-social-analytics"
     },
     {
       name: "Voter Coverage",
       icon: FaMapMarkedAlt,
       color: "from-green-500 to-green-600",
       stats: { score: stats.voterStats.targetedVoters > 0 ? Math.round((stats.voterStats.reachedVoters / stats.voterStats.targetedVoters) * 100) : 0, label: "% Covered" },
-      link: "/voter-management/overview"
+      link: "/voter-management/overview",
+      permission: "view-voter-overview"
     },
     {
       name: "Communication",
       icon: FaComments,
       color: "from-purple-500 to-purple-600",
       stats: { score: stats.communication.smsSent, label: "Messages" },
-      link: "/communication/sms"
+      link: "/communication/sms",
+      permission: "view-sms"
     },
     {
       name: "Events",
       icon: FaCalendarAlt,
       color: "from-orange-500 to-orange-600",
       stats: { score: stats.events.upcoming, label: "Upcoming" },
-      link: "/event/overview"
+      link: "/event/overview",
+      permission: "view-event-overview"
     },
     {
       name: "Volunteers",
       icon: FaUsersCog,
       color: "from-teal-500 to-teal-600",
       stats: { score: stats.volunteers.active, label: "Active" },
-      link: "/volunteer/overview"
+      link: "/volunteer/overview",
+      permission: "view-volunteer-overview"
     },
     {
       name: "Total Voters",
       icon: FaUsers,
       color: "from-pink-500 to-pink-600",
       stats: { score: stats.voterStats.totalVoters, label: "Collected" },
-      link: "/voter-management/voters"
+      link: "/voter-management/voters",
+      permission: "view-voters"
     },
     {
       name: "Vote Centres",
       icon: FaVoteYea,
       color: "from-red-500 to-red-600",
       stats: { score: stats.pollingBooths, label: "Total Centres" },
-      link: "/voter-management/vote-centres"
+      link: "/voter-management/vote-centres",
+      permission: "view-vote-centres"
     }
   ];
+
+  const allowedModules = modules.filter(module => !module.permission || hasPermission(module.permission));
 
   return (
     <DefaultLayout title="Dashboard">
@@ -260,7 +272,7 @@ export default function DashboardPage() {
 
             {/* Module Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-              {modules.map((module, index) => (
+              {allowedModules.map((module, index) => (
                 <Link
                   key={index} href={module.link}
                   className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6 hover:shadow-xl transition-all cursor-pointer"

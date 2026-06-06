@@ -129,7 +129,7 @@ const SocialAnalysisDetailPage = ({ params }) => {
 
     return (
         <DefaultLayout title="Social Media Analytics">
-            <ProtectedRoute>
+            <ProtectedRoute permissions={['view-social-analytics']}>
                 <div className="p-6 max-w-7xl mx-auto">
                     <div className="mb-6 flex justify-between items-center">
                         <div>

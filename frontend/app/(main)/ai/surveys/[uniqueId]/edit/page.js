@@ -354,7 +354,7 @@ export default function EditSurveyPage() {
 
     return (
         <DefaultLayout title="Edit Survey">
-            <ProtectedRoute>
+            <ProtectedRoute permissions={['create-surveys']}>
                 {loading ? (
                     <LoadingState message="Loading Survey Data..." />
                 ) : (

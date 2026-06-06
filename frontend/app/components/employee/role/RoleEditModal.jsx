@@ -7,6 +7,7 @@ const RoleEditModal = ({ isOpen, onClose, onSubmit, role, permissions = [] }) =>
     role_name: "",
     permission_ids: [],
   });
+  const [searchQuery, setSearchQuery] = useState("");
 
 useEffect(() => {
   if (role) {
@@ -64,11 +65,16 @@ useEffect(() => {
         permission_ids: role.permission_ids || [],
       });
     }
+    setSearchQuery("");
     onClose();
   };
 
+  const filteredPermissions = permissions.filter((perm) =>
+    perm.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const allPermissionIds = permissions.map((p) => p.id);
-  const isAllChecked = allPermissionIds.every((id) => formData.permission_ids.includes(id));
+  const isAllChecked = allPermissionIds.length > 0 && allPermissionIds.every((id) => formData.permission_ids.includes(id));
 
   if (!isOpen) return null;
 
@@ -114,8 +120,18 @@ useEffect(() => {
             <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
               Permissions
             </label>
-            <div className="space-y-2 max-h-52 overflow-y-auto">
-              <label className="flex items-center gap-2 text-sm font-medium text-gray-800 dark:text-gray-200 cursor-pointer">
+            
+            {/* Search Input */}
+            <input
+              type="text"
+              placeholder="Search permissions..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full mb-3 px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200"
+            />
+
+            <div className="space-y-2 max-h-52 overflow-y-auto border p-3 rounded-lg border-gray-200 dark:border-gray-700">
+              <label className="flex items-center gap-2 text-sm font-medium text-gray-800 dark:text-gray-200 cursor-pointer mb-2 pb-2 border-b border-gray-200 dark:border-gray-700">
                 <input
                   type="checkbox"
                   checked={isAllChecked}
@@ -124,20 +140,27 @@ useEffect(() => {
                 />
                 Select All
               </label>
-              {permissions.map((perm) => (
-                <label
-                  key={perm.id}
-                  className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-200 cursor-pointer"
-                >
-                  <input
-                    type="checkbox"
-                    checked={formData.permission_ids.includes(perm.id)}
-                    onChange={() => handlePermissionToggle(perm.id)}
-                    className="accent-yellow-500 w-4 h-4"
-                  />
-                  {perm.name}
-                </label>
-              ))}
+              
+              {filteredPermissions.length > 0 ? (
+                filteredPermissions.map((perm) => (
+                  <label
+                    key={perm.id}
+                    className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-200 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 p-1 rounded"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={formData.permission_ids.includes(perm.id)}
+                      onChange={() => handlePermissionToggle(perm.id)}
+                      className="accent-yellow-500 w-4 h-4"
+                    />
+                    {perm.name}
+                  </label>
+                ))
+              ) : (
+                <div className="text-sm text-gray-500 dark:text-gray-400 text-center py-2">
+                  No permissions found
+                </div>
+              )}
             </div>
           </div>
 

@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         shift_date: DataTypes.DATEONLY,
         expected_start_time: DataTypes.DATE,
         actual_check_in: DataTypes.DATE,
-        check_in_location: DataTypes.GEOGRAPHY('POINT'),
+        check_in_location: DataTypes.GEOMETRY('POINT'),
         status: {
             type: DataTypes.ENUM('ASSIGNED', 'ON_DUTY', 'ABSENT', 'COMPLETED', 'LATE'),
             defaultValue: 'ASSIGNED'

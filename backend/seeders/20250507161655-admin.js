@@ -8,7 +8,7 @@ module.exports = {
     const salt = await bcrypt.genSalt(10);
     const hashedPass1 = await bcrypt.hash('super_123_admin', salt);
     const hashedPass2 = await bcrypt.hash('123456', salt);
-    const hashedPassVolunteer = await bcrypt.hash('123456', salt);
+    const hashedPassMember = await bcrypt.hash('123456', salt);
 
     const generateEmployeeId = () => {
       const randomNum = Math.floor(10000 + Math.random() * 90000);
@@ -28,11 +28,11 @@ module.exports = {
         password: hashedPass2,
         employee_id: generateEmployeeId()
       },
-      { name: 'Volunteer 1', email: 'volunteer1@gmail.com', password: hashedPassVolunteer, employee_id: generateEmployeeId() },
-      { name: 'Volunteer 2', email: 'volunteer2@gmail.com', password: hashedPassVolunteer, employee_id: generateEmployeeId() },
-      { name: 'Volunteer 3', email: 'volunteer3@gmail.com', password: hashedPassVolunteer, employee_id: generateEmployeeId() },
-      { name: 'Volunteer 4', email: 'volunteer4@gmail.com', password: hashedPassVolunteer, employee_id: generateEmployeeId() },
-      { name: 'Volunteer 5', email: 'volunteer5@gmail.com', password: hashedPassVolunteer, employee_id: generateEmployeeId() }
+      { name: 'member 1', email: 'member1@gmail.com', password: hashedPassMember, employee_id: generateEmployeeId() },
+      { name: 'member 2', email: 'member2@gmail.com', password: hashedPassMember, employee_id: generateEmployeeId() },
+      { name: 'member 3', email: 'member3@gmail.com', password: hashedPassMember, employee_id: generateEmployeeId() },
+      { name: 'member 4', email: 'member4@gmail.com', password: hashedPassMember, employee_id: generateEmployeeId() },
+      { name: 'member 5', email: 'member5@gmail.com', password: hashedPassMember, employee_id: generateEmployeeId() }
     ];
 
     for (const user of users) {

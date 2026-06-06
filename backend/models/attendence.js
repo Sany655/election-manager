@@ -30,14 +30,14 @@ module.exports = (sequelize, DataTypes) => {
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'User',
+        model: 'users',
         key: 'id',
       },
     },
     company_attendence_policy_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'AttendencePolicy',
+        model: 'attendance_policies',
         key: 'id',
       },
     },
@@ -74,7 +74,7 @@ module.exports = (sequelize, DataTypes) => {
     attendance_taken_by: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'User',
+        model: 'users',
         key: 'id',
       },
     },

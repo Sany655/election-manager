@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         severity: DataTypes.INTEGER,
         description: DataTypes.TEXT,
         media_urls: {
-            type: DataTypes.JSONB,
+            type: DataTypes.JSON,
             defaultValue: []
         },
         status: {

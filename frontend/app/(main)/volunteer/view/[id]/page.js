@@ -24,7 +24,7 @@ const page = async ({ params: { id } }) => {
 
     return (
         <DefaultLayout title="Volunteer Details">
-            <ProtectedRoute permissions={['view-user-details']}>
+            <ProtectedRoute permissions={['view-volunteers']}>
                 <EmployeeDetails user={data.data} />
             </ProtectedRoute>
         </DefaultLayout>

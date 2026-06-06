@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
     attendence_policy_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'AttendencePolicy',
+        model: 'attendance_policies',
         key: 'id',
       },
       onDelete: 'CASCADE',

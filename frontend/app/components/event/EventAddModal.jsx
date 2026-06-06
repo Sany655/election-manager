@@ -234,26 +234,26 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
     if (formData.name.trim()) {
       const jsonData = {
         name: formData.name.trim(),
-        objective: formData.objective.trim(),
-        type_id: parseInt(formData.type_id),
+        // objective: formData.objective.trim(),
+        // type_id: parseInt(formData.type_id),
         status: parseInt(formData.status),
-        visibility: parseInt(formData.visibility),
-        target_group_id: parseInt(formData.target_group_id),
-        created_by: parseInt(formData.created_by),
-        organized_by: parseInt(formData.organized_by),
-        capacity: parseInt(formData.capacity),
-        est_budget: parseFloat(formData.est_budget),
-        est_spending: parseFloat(formData.est_spending),
+        // visibility: parseInt(formData.visibility),
+        // target_group_id: parseInt(formData.target_group_id),
+        // created_by: parseInt(formData.created_by),
+        // organized_by: parseInt(formData.organized_by),
+        // capacity: parseInt(formData.capacity),
+        // est_budget: parseFloat(formData.est_budget),
+        // est_spending: parseFloat(formData.est_spending),
         location: formData.location.trim(),
-        division_id: parseInt(formData.division_id),
-        district_id: parseInt(formData.district_id),
-        upazilla_id: parseInt(formData.upazilla_id),
-        ward: formData.ward ? parseInt(formData.ward) : null,
-        union_id: parseInt(formData.union_id),
+        // division_id: parseInt(formData.division_id),
+        // district_id: parseInt(formData.district_id),
+        // upazilla_id: parseInt(formData.upazilla_id),
+        // ward: formData.ward ? parseInt(formData.ward) : null,
+        // union_id: parseInt(formData.union_id),
         expected_start_datetime: formData.expected_start_datetime,
         expected_end_datetime: formData.expected_end_datetime,
-        actual_start_datetime: formData.actual_start_datetime || null,
-        actual_end_datetime: formData.actual_end_datetime || null,
+        // actual_start_datetime: formData.actual_start_datetime || null,
+        // actual_end_datetime: formData.actual_end_datetime || null,
       };
 
       onSubmit(jsonData);
@@ -303,6 +303,7 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
               </div>
 
               {/* Objective */}
+              {/*
               <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Objective *
@@ -318,8 +319,10 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
                   required
                 />
               </div>
+              */}
 
               {/* Event Type */}
+              {/*
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Event Type *
@@ -338,8 +341,10 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
                   ))}
                 </select>
               </div>
+              */}
 
               {/* Target Group */}
+              {/*
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Target Group *
@@ -360,6 +365,7 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
                   ))}
                 </select>
               </div>
+              */}
 
               {/* Status */}
               <div>
@@ -381,6 +387,7 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
               </div>
 
               {/* Visibility */}
+              {/*
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Visibility *
@@ -398,17 +405,18 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
                   <option value="2">Members Only</option>
                 </select>
               </div>
+              */}
             </div>
           </div>
 
           {/* Organization Details */}
+          {/*
           <div className="space-y-4">
             <h3 className="text-lg font-medium text-gray-900 border-b pb-2">
               Organization Details
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Organized By */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Organized By *
@@ -430,8 +438,6 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
                 </select>
               </div>
 
-
-              {/* Created By (User ID) */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Created By (User ID) *
@@ -448,7 +454,6 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
                 />
               </div>
 
-              {/* Capacity */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Capacity
@@ -465,15 +470,16 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
               </div>
             </div>
           </div>
+          */}
 
           {/* Budget Information */}
+          {/*
           <div className="space-y-4">
             <h3 className="text-lg font-medium text-gray-900 border-b pb-2">
               Budget Information
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Estimated Budget */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Estimated Budget (৳)
@@ -490,7 +496,6 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
                 />
               </div>
 
-              {/* Estimated Spending */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Estimated Spending (৳)
@@ -508,6 +513,7 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
               </div>
             </div>
           </div>
+          */}
 
           {/* Location Information */}
           <div className="space-y-4">
@@ -534,6 +540,7 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
               </div>
 
               {/* Division */}
+              {/*
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Division *
@@ -554,8 +561,10 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
                   ))}
                 </select>
               </div>
+              */}
 
               {/* District */}
+              {/*
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   District *
@@ -576,8 +585,10 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
                   ))}
                 </select>
               </div>
+              */}
 
               {/* Upazilla */}
+              {/*
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Upazilla *
@@ -598,8 +609,10 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
                   ))}
                 </select>
               </div>
+              */}
 
               {/* Union */}
+              {/*
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Union
@@ -619,8 +632,10 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
                   ))}
                 </select>
               </div>
+              */}
 
               {/* Ward */}
+              {/*
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Ward No
@@ -633,6 +648,7 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
                   placeholder="Enter ward number"
                 />
               </div>
+              */}
             </div>
           </div>
 
@@ -676,6 +692,7 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
               </div>
 
               {/* Actual Start */}
+              {/*
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Actual Start Date & Time
@@ -689,8 +706,10 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
+              */}
 
               {/* Actual End */}
+              {/*
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Actual End Date & Time
@@ -704,6 +723,7 @@ const EventAddModal = ({ isOpen, onClose, onSubmit, title }) => {
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
+              */}
             </div>
           </div>
 

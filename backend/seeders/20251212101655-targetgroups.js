@@ -12,49 +12,41 @@ module.exports = {
       [
         {
           name: 'General Public',
-          description: 'Open to all citizens',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           name: 'Students',
-          description: 'School, college, and university students',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           name: 'Youth',
-          description: 'Young people and youth organizations',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           name: 'Women',
-          description: 'Women-focused programs and audiences',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          name: 'Senior Citizens',
-          description: 'Elderly citizens',
+          name: 'Seniors',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           name: 'Volunteers',
-          description: 'Registered volunteers and activists',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           name: 'Party Members',
-          description: 'Internal party members',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           name: 'Professionals',
-          description: 'Doctors, engineers, lawyers, teachers, etc.',
           createdAt: new Date(),
           updatedAt: new Date(),
         },

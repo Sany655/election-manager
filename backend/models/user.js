@@ -96,9 +96,63 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   User.init({
+    // Photo 
+    photo: {
+      type: DataTypes.STRING(255),
+    },
+    // Name 
     name: {
       type: DataTypes.STRING(50),
     },
+    // Membership Number 
+    membership_number: {
+      type: DataTypes.STRING(50),
+    },
+    // Organization 
+    organization: {
+      type: DataTypes.STRING(100),
+    },
+    // Educational Background 
+    educational_background: {
+      type: DataTypes.TEXT,
+    },
+    // Professional Experience 
+    professional_experience: {
+      type: DataTypes.TEXT,
+    },
+    // Election Position 
+    election_position: {
+      type: DataTypes.STRING(100),
+    },
+    // Biography 
+    biography: {
+      type: DataTypes.TEXT,
+    },
+    // Achievements 
+    achievements: {
+      type: DataTypes.TEXT,
+    },
+    // Vision & Mission 
+    vision_mission: {
+      type: DataTypes.TEXT,
+    },
+    // Election Manifesto 
+    election_manifesto: {
+      type: DataTypes.TEXT,
+    },
+    // Gallery 
+    gallery: {
+      type: DataTypes.JSON,
+    },
+    // Videos 
+    videos: {
+      type: DataTypes.JSON,
+    },
+    // Contact Information 
+    contact_information: {
+      type: DataTypes.TEXT,
+    },
+    // Existing fields
     employee_id: {
       type: DataTypes.STRING(50),
     },

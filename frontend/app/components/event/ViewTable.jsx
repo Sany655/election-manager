@@ -12,6 +12,7 @@ import {
   FaCalendarAlt,
   FaMapMarkerAlt,
   FaUsers,
+  FaClock,
 } from "react-icons/fa";
 import { FiCheckCircle, FiXCircle } from "react-icons/fi";
 import { Input } from "@/components/ui/input";
@@ -329,209 +330,112 @@ const ViewTable = ({ data, title, volunteer_teams = [] }) => {
         </div>
       </div>
 
-      {/* Table */}
-      <div className="overflow-x-auto bg-white rounded-lg shadow">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Event Details
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Type & Status
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Location
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Schedule
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Capacity & Budget
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Assigned Teams
-              </th>
-              <th className="px-6 text-center rounded-tr-lg">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {filteredData.length === 0 ? (
-              <tr>
-                <td
-                  colSpan="6"
-                  className="px-6 py-12 text-center text-gray-500"
-                >
-                  <div className="flex flex-col items-center">
-                    <FaCalendarAlt className="w-12 h-12 text-gray-300 mb-3" />
-                    <p className="text-lg font-medium mb-2">
-                      {searchTerm ? "No events found" : `No ${title} found`}
-                    </p>
-                    <p className="text-sm">
-                      {searchTerm
-                        ? "Try adjusting your search criteria"
-                        : `Create your first ${title} to get started`}
-                    </p>
+      {/* Activities Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredData.length === 0 ? (
+          <div className="col-span-full py-12 text-center text-gray-500 bg-white rounded-lg shadow">
+            <div className="flex flex-col items-center">
+              <FaCalendarAlt className="w-12 h-12 text-gray-300 mb-3" />
+              <p className="text-lg font-medium mb-2">
+                {searchTerm ? "No activities found" : `No ${title} found`}
+              </p>
+              <p className="text-sm">
+                {searchTerm
+                  ? "Try adjusting your search criteria"
+                  : `Create your first ${title} to get started`}
+              </p>
+            </div>
+          </div>
+        ) : (
+          filteredData.map((event, index) => {
+            const startDate = event.expected_start_datetime || event.actual_start_datetime;
+            const endDate = event.expected_end_datetime || event.actual_end_datetime;
+            
+            const month = startDate ? new Date(startDate).toLocaleString("en-US", { month: "short" }).toUpperCase() : "TBA";
+            const day = startDate ? new Date(startDate).toLocaleString("en-US", { day: "2-digit" }) : "--";
+            const year = startDate ? new Date(startDate).getFullYear() : "----";
+            
+            const formatTime = (d) => new Date(d).toLocaleTimeString("en-US", { hour: '2-digit', minute: '2-digit' });
+            const timeString = startDate ? (endDate ? `${formatTime(startDate)} - ${formatTime(endDate)}` : formatTime(startDate)) : "Time TBA";
+
+            const statusMap = {
+              0: { label: "Draft", color: "bg-gray-100 text-gray-800" },
+              1: { label: "Planned", color: "bg-blue-100 text-blue-800" },
+              2: { label: "Ongoing", color: "bg-green-100 text-green-800" },
+              3: { label: "Completed", color: "bg-green-100 text-green-800" },
+              4: { label: "Cancelled", color: "bg-red-100 text-red-800" },
+            };
+            const statusInfo = statusMap[event.status] || statusMap[0];
+
+            return (
+              <div key={event.id || index} className="flex flex-col bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow p-5 relative">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex gap-4">
+                    {/* Date Box */}
+                    <div className="flex flex-col items-center justify-center bg-gray-50 rounded-xl px-4 py-2 min-w-[70px]">
+                      <span className="text-blue-600 font-semibold text-xs tracking-wider">{month}</span>
+                      <span className="text-2xl font-bold text-gray-900 leading-tight my-0.5">{day}</span>
+                      <span className="text-gray-400 text-xs">{year}</span>
+                    </div>
+
+                    {/* Details */}
+                    <div className="flex flex-col justify-center">
+                      <h3 className="font-bold text-gray-900 text-lg line-clamp-1 pr-16">{event.name}</h3>
+                      <div className="flex items-center text-gray-500 text-sm mt-1 gap-1.5">
+                        <FaMapMarkerAlt className="flex-shrink-0" />
+                        <span className="line-clamp-1">{event.location || 'Location TBA'}</span>
+                      </div>
+                      <div className="flex items-center text-gray-500 text-sm mt-1 gap-1.5">
+                        <FaClock className="flex-shrink-0" />
+                        <span>{timeString}</span>
+                      </div>
+                    </div>
                   </div>
-                </td>
-              </tr>
-            ) : (
-              filteredData.map((event, index) => (
-                <tr key={event.id || index} className="hover:bg-gray-50">
-                  {/* Event Details */}
-                  <td className="px-6 py-4">
-                    <div className="text-sm font-medium text-gray-900 mb-1">
-                      {event.name}
-                    </div>
-                    <div className="text-xs text-gray-500 line-clamp-2 max-w-xs">
-                      {event.objective}
-                    </div>
-                    {event.id && (
-                      <div className="text-xs text-gray-400 mt-1">
-                        ID: {event.id}
-                      </div>
-                    )}
-                  </td>
 
-                  {/* Type & Status */}
-                  <td className="px-6 py-4">
-                    <div className="space-y-2">
-                      <div className="text-sm text-gray-900">
-                        {getEventTypeName(event.type_id)}
-                      </div>
-                      <div className="flex flex-col gap-1">
-                        {getStatusBadge(event.status)}
-                        {getVisibilityBadge(event.visibility)}
-                      </div>
-                    </div>
-                  </td>
+                  {/* Status Badge - Absolute positioned so it doesn't squish title */}
+                  <span className={`absolute top-5 right-5 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${statusInfo.color}`}>
+                    {statusInfo.label}
+                  </span>
+                </div>
 
-                  {/* Location */}
-                  <td className="px-6 py-4">
-                    <div className="flex items-start gap-2">
-                      <FaMapMarkerAlt className="text-gray-400 mt-1 flex-shrink-0" />
-                      <div>
-                        <div className="text-sm text-gray-900 line-clamp-2 max-w-xs">{event.location}</div>
-                        <div className="text-xs text-gray-500 mt-1">
-                          {[
-                            event.division?.name,
-                            event.district?.name,
-                            event.upazilla?.name,
-                            event.upazilla?.name,
-                            event.union?.name,
-                            event.ward ? `Ward ${event.ward}` : null
-                          ].filter(Boolean).join(" > ")}
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-
-                  {/* Schedule */}
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="space-y-1">
-                      <div className="text-xs text-gray-500">Expected:</div>
-                      <div className="text-sm text-gray-900">
-                        {formatDate(event.expected_start_datetime)}
-                      </div>
-                      {event.actual_start_datetime && (
-                        <>
-                          <div className="text-xs text-gray-500 mt-2">
-                            Actual:
-                          </div>
-                          <div className="text-sm text-green-600">
-                            {formatDate(event.actual_start_datetime)}
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  </td>
-
-                  {/* Capacity & Budget */}
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="space-y-2">
-                      {event.capacity && (
-                        <div className="flex items-center gap-2">
-                          <FaUsers className="text-gray-400 text-xs" />
-                          <span className="text-sm text-gray-900">
-                            {event.capacity} people
-                          </span>
-                        </div>
-                      )}
-                      {event.est_budget && (
-                        <div className="text-sm text-gray-900">
-                          Budget: ৳{event.est_budget.toLocaleString()}
-                        </div>
-                      )}
-                      {event.est_spending && (
-                        <div className="text-xs text-gray-500">
-                          Spending: ৳{event.est_spending.toLocaleString()}
-                        </div>
-                      )}
-                    </div>
-                  </td>
-
-                  {/* Assigned Teams */}
-                  <td className="px-6 py-4">
-                    <div className="flex flex-wrap gap-1">
-                      {event.volunteer_teams && event.volunteer_teams.length > 0 ? (
-                        event.volunteer_teams.map((team) => (
-                          <span
-                            key={team.id}
-                            className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-purple-100 text-purple-800"
-                          >
-                            {team.name}
-                          </span>
-                        ))
-                      ) : (
-                        <span className="text-xs text-gray-400">None</span>
-                      )}
-                    </div>
-                  </td>
-
-                  {/* Actions */}
-                  <td className="p-4">
-                    <div className="flex items-center justify-center gap-2">
-                      <button
-                        // onClick={() =>
-                        //   router.push(`/event/view/${event.id}`)
-                        // }
-                        onClick={() => handleModal("view", event)}
-                        className="p-2 text-blue-500 hover:text-blue-700 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
-                        title="View Details"
-                      >
-                        <FaEye size={16} />
-                      </button>
-                      <button
-                        onClick={() => handleModal("edit", event)}
-                        className="p-2 text-yellow-500 hover:text-yellow-700 hover:bg-yellow-50 dark:hover:bg-yellow-900/20 rounded-lg transition-colors"
-                        title="Edit Event"
-                        disabled={isLoading}
-                      >
-                        <FaEdit size={16} />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(event)}
-                        className="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
-                        title="Delete Event"
-                        disabled={isLoading}
-                      >
-                        <FaTrash size={16} />
-                      </button>
-                      <button
-                        onClick={() => handleModal("assign", event)}
-                        className="p-2 text-purple-500 hover:text-purple-700 hover:bg-purple-50 dark:hover:bg-purple-900/20 rounded-lg transition-colors"
-                        title="Assign Team"
-                        disabled={isLoading}
-                      >
-                        <MdGroups size={16} />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
+                {/* Actions */}
+                <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-end gap-1">
+                  <button
+                    onClick={() => handleModal("view", event)}
+                    className="p-2 text-blue-500 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
+                    title="View Details"
+                  >
+                    <FaEye size={16} />
+                  </button>
+                  <button
+                    onClick={() => handleModal("edit", event)}
+                    className="p-2 text-yellow-500 hover:text-yellow-700 hover:bg-yellow-50 rounded-lg transition-colors"
+                    title="Edit Activity"
+                    disabled={isLoading}
+                  >
+                    <FaEdit size={16} />
+                  </button>
+                  <button
+                    onClick={() => handleModal("assign", event)}
+                    className="p-2 text-purple-500 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-colors"
+                    title="Assign Team"
+                    disabled={isLoading}
+                  >
+                    <MdGroups size={16} />
+                  </button>
+                  <button
+                    onClick={() => handleDelete(event)}
+                    className="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors"
+                    title="Delete Activity"
+                    disabled={isLoading}
+                  >
+                    <FaTrash size={16} />
+                  </button>
+                </div>
+              </div>
+            );
+          })
+        )}
       </div>
 
       {/* Modals */}

@@ -23,7 +23,7 @@ module.exports = {
       const roleId = await getRoleId(assign.role);
 
       if (userId && roleId) {
-        const [existing] = await queryInterface.sequelize.query(`SELECT id FROM user_roles WHERE user_id = ${userId} AND role_id = ${roleId} LIMIT 1`);
+        const [existing] = await queryInterface.sequelize.query(`SELECT user_id FROM user_roles WHERE user_id = ${userId} AND role_id = ${roleId} LIMIT 1`);
         if (existing.length === 0) {
           await queryInterface.bulkInsert('user_roles', [{
             user_id: userId,

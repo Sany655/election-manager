@@ -198,7 +198,7 @@ const AgentSetup = () => {
 
     return (
         <DefaultLayout>
-            <ProtectedRoute>
+            <ProtectedRoute permissions={['view-command-center']}>
                 <div className="p-6">
                     <div className="flex justify-between items-center mb-6">
                         <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Agent Setup</h1>

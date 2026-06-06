@@ -18,11 +18,34 @@ module.exports = (sequelize, DataTypes) => {
       Voter.belongsTo(models.Union, { foreignKey: 'union_id', as: 'union' });
     }
   }
-  
+
   Voter.init({
     name: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    membership_no: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    organization: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    designation: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    mobile: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        isEmail: true
+      }
     },
     age: {
       type: DataTypes.INTEGER,
@@ -77,6 +100,6 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true,
     underscored: true
   });
-  
+
   return Voter;
 };

@@ -1,15 +1,5 @@
-const { Sequelize } = require('sequelize');
-const env = process.env.NODE_ENV || 'development';
-const config = require('./config.js')[env];
+const db = require('../models');
 
-// Connect with Sequelize
-const sequelize = new Sequelize(
-  config.database,
-  config.username,
-  config.password,
-  config
-);
-
-module.exports = { sequelize };
-
-
+// The models/index.js already initializes the Sequelize instance and loads all models.
+// We export the db object (which contains sequelize and all models) to maintain the existing import structure.
+module.exports = db;

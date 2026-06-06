@@ -20,6 +20,7 @@ import Pagination from "../Pagination";
 import DesignationEditModal from "./DesignationEditModal";
 import DesignationAddModal from "./DesignationAddModal";
 import DesignationSetModal from "./DesignationSetModal";
+import PermissionGate from "../PermissionGate";
 
 const ViewTable = ({ data = [], users = [] }) => {
   const router = useRouter();
@@ -196,22 +197,26 @@ const ViewTable = ({ data = [], users = [] }) => {
           </div>
         </div>
         <div className="flex items-center justify-end gap-2">
-          <Button
-            onClick={() => handleModal("set")}
-            className="flex items-center gap-2 w-full sm:w-auto"
-            disabled={isLoading}
-          >
-            <FaPlusCircle className="w-4 h-4" />
-            Assign Designation
-          </Button>
-          <Button
-            onClick={() => handleModal("add")}
-            className="flex items-center gap-2 w-full sm:w-auto"
-            disabled={isLoading}
-          >
-            <AiOutlineAntDesign className="w-4 h-4" />
-            Add New Designation
-          </Button>
+          <PermissionGate permissions={["add-designations"]}>
+            <Button
+              onClick={() => handleModal("set")}
+              className="flex items-center gap-2 w-full sm:w-auto"
+              disabled={isLoading}
+            >
+              <FaPlusCircle className="w-4 h-4" />
+              Assign Designation
+            </Button>
+          </PermissionGate>
+          <PermissionGate permissions={["add-designations"]}>
+            <Button
+              onClick={() => handleModal("add")}
+              className="flex items-center gap-2 w-full sm:w-auto"
+              disabled={isLoading}
+            >
+              <AiOutlineAntDesign className="w-4 h-4" />
+              Add New Designation
+            </Button>
+          </PermissionGate>
         </div>
       </div>
 
@@ -308,22 +313,26 @@ const ViewTable = ({ data = [], users = [] }) => {
                       >
                         <FaEye size={16} />
                       </button> */}
-                      <button
-                        onClick={() => handleModal("edit", designation)}
-                        className="p-2 text-yellow-500 hover:text-yellow-700 hover:bg-yellow-50 dark:hover:bg-yellow-900/20 rounded-lg transition-colors"
-                        title="Edit designation"
-                        disabled={isLoading}
-                      >
-                        <FaEdit size={16} />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(designation)}
-                        className="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
-                        title="Delete designation"
-                        disabled={isLoading}
-                      >
-                        <FaTrash size={16} />
-                      </button>
+                      <PermissionGate permissions={["edit-designations"]}>
+                        <button
+                          onClick={() => handleModal("edit", designation)}
+                          className="p-2 text-yellow-500 hover:text-yellow-700 hover:bg-yellow-50 dark:hover:bg-yellow-900/20 rounded-lg transition-colors"
+                          title="Edit designation"
+                          disabled={isLoading}
+                        >
+                          <FaEdit size={16} />
+                        </button>
+                      </PermissionGate>
+                      <PermissionGate permissions={["delete-designations"]}>
+                        <button
+                          onClick={() => handleDelete(designation)}
+                          className="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
+                          title="Delete designation"
+                          disabled={isLoading}
+                        >
+                          <FaTrash size={16} />
+                        </button>
+                      </PermissionGate>
                     </div>
                   </td>
                 </tr>

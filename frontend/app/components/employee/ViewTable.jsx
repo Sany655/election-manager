@@ -23,11 +23,15 @@ import Image from "next/image";
 import noImg from "@/app/public/images/no-image.png";
 import EmployeeAddModal from "./EmployeeAddModal";
 import EmployeeEditModal from "./EmployeeEditModal";
+import PermissionGate from "../PermissionGate";
 // import { BASE_URL_FOR_CLIENT } from "@/app/utils/constants";
 
 
 const ViewTable = ({ token, roles, policies, locations, designations, renderFrom, title }) => {
   const router = useRouter();
+  const addPermission = renderFrom === 'volunteer' ? 'add-volunteers' : 'add-users';
+  const editPermission = renderFrom === 'volunteer' ? 'edit-volunteers' : 'edit-users';
+  const deletePermission = renderFrom === 'volunteer' ? 'delete-volunteers' : 'delete-users';
   const [searchTerm, setSearchTerm] = useState("");
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -322,14 +326,16 @@ const ViewTable = ({ token, roles, policies, locations, designations, renderFrom
               Export Excel
             </Button>
           </div>}
-          <Button
-            onClick={() => handleModal("add")}
-            className="flex items-center gap-2 w-full sm:w-auto"
-            disabled={isLoading}
-          >
-            <FaUser className="w-4 h-4" />
-            Add New {title}
-          </Button>
+          <PermissionGate permissions={[addPermission]}>
+            <Button
+              onClick={() => handleModal("add")}
+              className="flex items-center gap-2 w-full sm:w-auto"
+              disabled={isLoading}
+            >
+              <FaUser className="w-4 h-4" />
+              Add New {title}
+            </Button>
+          </PermissionGate>
         </div>
       </div>
 
@@ -596,22 +602,26 @@ const ViewTable = ({ token, roles, policies, locations, designations, renderFrom
                       >
                         <FaEye size={16} />
                       </button>
-                      <button
-                        onClick={() => handleModal("edit", user)}
-                        className="p-2 text-yellow-500 hover:text-yellow-700 hover:bg-yellow-50 dark:hover:bg-yellow-900/20 rounded-lg transition-colors"
-                        title="Edit Volunteer"
-                        disabled={isLoading}
-                      >
-                        <FaEdit size={16} />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(user)}
-                        className="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
-                        title="Delete Volunteer"
-                        disabled={isLoading}
-                      >
-                        <FaTrash size={16} />
-                      </button>
+                      <PermissionGate permissions={[editPermission]}>
+                        <button
+                          onClick={() => handleModal("edit", user)}
+                          className="p-2 text-yellow-500 hover:text-yellow-700 hover:bg-yellow-50 dark:hover:bg-yellow-900/20 rounded-lg transition-colors"
+                          title="Edit Volunteer"
+                          disabled={isLoading}
+                        >
+                          <FaEdit size={16} />
+                        </button>
+                      </PermissionGate>
+                      <PermissionGate permissions={[deletePermission]}>
+                        <button
+                          onClick={() => handleDelete(user)}
+                          className="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
+                          title="Delete Volunteer"
+                          disabled={isLoading}
+                        >
+                          <FaTrash size={16} />
+                        </button>
+                      </PermissionGate>
                     </div>
                   </td>
                 </tr>

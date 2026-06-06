@@ -13,7 +13,8 @@ import {
   FaVoteYea,
   FaUserCheck,
   FaChartPie,
-  FaWhatsapp
+  FaWhatsapp,
+  FaUserTie
 } from "react-icons/fa";
 import { FaLandMineOn } from "react-icons/fa6";
 import {
@@ -56,16 +57,19 @@ const menu = [
         title: "War Room",
         icon: <MdOutlineLocalPolice />,
         path: "/command-center/overview",
+        permission: 'view-command-center',
       },
       {
         title: "Agent Setup",
         icon: <FaUserCog />,
         path: "/command-center/agent-setup",
+        permission: 'view-command-center',
       },
       {
         title: "Incident & Issue Monitoring",
         icon: <FaLandMineOn />,
         path: "/command-center/incident-monitoring",
+        permission: 'view-command-center',
       },
     ],
   },
@@ -153,6 +157,18 @@ const menu = [
     ],
   },
   {
+    title: "Candidate Management",
+    icon: <FaUserTie />,
+    childrens: [
+      {
+        title: "Candidates",
+        icon: <FaUsers />,
+        path: "/candidates/view",
+        permission: 'view-candidates',
+      }
+    ],
+  },
+  {
     title: "Volunteer Management",
     icon: <FaUserCog />,
     childrens: [
@@ -219,7 +235,7 @@ const menu = [
     ],
   },
   {
-    title: "Event Managemet",
+    title: "Activities",
     icon: <MdOutlineLocalPolice />,
     childrens: [
       {
@@ -229,7 +245,7 @@ const menu = [
         permission: 'view-event-overview',
       },
       {
-        title: "Event Setup",
+        title: "Activities List",
         path: "/event/view",
         icon: <MdOutlineAlignHorizontalLeft />,
         permission: 'view-events',

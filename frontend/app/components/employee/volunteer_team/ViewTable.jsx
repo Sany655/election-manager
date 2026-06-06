@@ -20,6 +20,7 @@ import { MdOutlineLocalPolice } from "react-icons/md";
 import TeamAddModal from "./TeamAddModal";
 import TeamEditModal from "./TeamEditModal";
 import AssignTeamMemberModal from "./AssignTeamMemberModal";
+import PermissionGate from "../../PermissionGate";
 
 const ViewTable = ({ data, users, title }) => {
   const router = useRouter();
@@ -218,22 +219,26 @@ const ViewTable = ({ data, users, title }) => {
           </div>
         </div>
         <div className="flex items-center justify-end gap-2">
-          <Button
-            onClick={() => handleModal("set")}
-            className="flex items-center gap-2 w-full sm:w-auto"
-            disabled={isLoading}
-          >
-            <FaPlusCircle className="w-4 h-4" />
-            Assign {title} Memeber
-          </Button>
-          <Button
-            onClick={() => handleModal("add")}
-            className="flex items-center gap-2 w-full sm:w-auto"
-            disabled={isLoading}
-          >
-            <FaPlusCircle className="w-4 h-4" />
-            Add New {title}
-          </Button>
+          <PermissionGate permissions={["add-teams"]}>
+            <Button
+              onClick={() => handleModal("set")}
+              className="flex items-center gap-2 w-full sm:w-auto"
+              disabled={isLoading}
+            >
+              <FaPlusCircle className="w-4 h-4" />
+              Assign {title} Memeber
+            </Button>
+          </PermissionGate>
+          <PermissionGate permissions={["add-teams"]}>
+            <Button
+              onClick={() => handleModal("add")}
+              className="flex items-center gap-2 w-full sm:w-auto"
+              disabled={isLoading}
+            >
+              <FaPlusCircle className="w-4 h-4" />
+              Add New {title}
+            </Button>
+          </PermissionGate>
         </div>
       </div>
 
@@ -311,20 +316,24 @@ const ViewTable = ({ data, users, title }) => {
                   {/* Actions */}
                   <td className="p-4">
                     <div className="flex items-center justify-center gap-2">
-                      <button
-                        onClick={() => handleModal("edit", policy)}
-                        className="p-2 text-blue-500 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
-                        disabled={isLoading}
-                      >
-                        <FaEdit size={16} />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(policy)}
-                        className="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors"
-                        disabled={isLoading}
-                      >
-                        <FaTrash size={16} />
-                      </button>
+                      <PermissionGate permissions={["edit-teams"]}>
+                        <button
+                          onClick={() => handleModal("edit", policy)}
+                          className="p-2 text-blue-500 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
+                          disabled={isLoading}
+                        >
+                          <FaEdit size={16} />
+                        </button>
+                      </PermissionGate>
+                      <PermissionGate permissions={["delete-teams"]}>
+                        <button
+                          onClick={() => handleDelete(policy)}
+                          className="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors"
+                          disabled={isLoading}
+                        >
+                          <FaTrash size={16} />
+                        </button>
+                      </PermissionGate>
                     </div>
                   </td>
                 </tr>

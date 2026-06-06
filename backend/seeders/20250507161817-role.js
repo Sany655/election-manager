@@ -7,7 +7,7 @@ module.exports = {
     const roles = [
       { name: 'super-admin', createdAt: new Date(), updatedAt: new Date() },
       { name: 'admin', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'volunteer', createdAt: new Date(), updatedAt: new Date() }
+      { name: 'member', createdAt: new Date(), updatedAt: new Date() }
     ];
 
     for (const role of roles) {

@@ -25,6 +25,7 @@ import {
 } from 'recharts'
 import toast from 'react-hot-toast'
 import DefaultLayout from '@/app/components/layout/DefaultLayout'
+import ProtectedRoute from '@/app/components/ProtectedRoute'
 import dynamic from 'next/dynamic'
 
 // Dynamically import the map component so it doesn't load on server (fixes window not defined)
@@ -175,163 +176,165 @@ const VoterOverviewPage = () => {
 
     return (
         <DefaultLayout title='Overview'>
-            <div className="space-y-8">
+            <ProtectedRoute permissions={['view-voter-overview']}>
+                <div className="space-y-8">
 
-                {/* Section: Voter Analytics */}
-                <div>
-                    <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4">Real-time Voter Insights</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                        <div className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm flex items-center space-x-4">
-                            <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
-                                <FaUsers size={20} />
-                            </div>
-                            <div>
-                                <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">Registered Voters</p>
-                                <h3 className="text-2xl font-bold text-gray-800 dark:text-white">{analytics.total.toLocaleString()}</h3>
-                            </div>
-                        </div>
-
-                        <div className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm flex items-center space-x-4">
-                            <div className="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center text-pink-600">
-                                <FaVenusMars size={20} />
-                            </div>
-                            <div>
-                                <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">Gender Ratio</p>
-                                <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
-                                    {analytics.male} <span className="text-sm text-gray-400 font-normal">M</span> / {analytics.female} <span className="text-sm text-gray-400 font-normal">F</span>
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm flex items-center space-x-4">
-                            <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center text-green-600">
-                                <FaMapMarkerAlt size={20} />
-                            </div>
-                            <div>
-                                <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">Active Divisions</p>
-                                <h3 className="text-2xl font-bold text-gray-800 dark:text-white">{analytics.uniqueDivisions} / 8</h3>
-                            </div>
-                        </div>
-
-                        <div className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm flex items-center space-x-4">
-                            <div className="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center text-orange-600">
-                                <FaIdCard size={20} />
-                            </div>
-                            <div>
-                                <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">Avg. Voter Age</p>
-                                <h3 className="text-2xl font-bold text-gray-800 dark:text-white">{analytics.avgAge} Yrs</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Section: Vote Centre Analytics */}
-                <div>
-                    <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4">Vote Centre Statistics</h2>
-
-                    {/* Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                        <Card
-                            title="Total Centres"
-                            value={englishToBengaliNumber(vcStats.totalCentres)}
-                            icon={<HiOfficeBuilding className="text-2xl" />}
-                            gradient="bg-gradient-to-br from-violet-500 to-purple-600"
-                            delay={0}
-                        />
-                        <Card
-                            title="Total Centre Voters"
-                            value={englishToBengaliNumber(vcStats.totalVoters)}
-                            icon={<HiUserGroup className="text-2xl" />}
-                            gradient="bg-gradient-to-br from-blue-500 to-cyan-600"
-                            delay={0.1}
-                        />
-                        <Card
-                            title="Male Voters (Centre)"
-                            value={englishToBengaliNumber(vcStats.totalMale)}
-                            icon={<span className="text-xl font-bold">♂</span>}
-                            gradient="bg-gradient-to-br from-indigo-500 to-blue-600"
-                            delay={0.2}
-                        />
-                        <Card
-                            title="Female Voters (Centre)"
-                            value={englishToBengaliNumber(vcStats.totalFemale)}
-                            icon={<span className="text-xl font-bold">♀</span>}
-                            gradient="bg-gradient-to-br from-pink-500 to-rose-600"
-                            delay={0.3}
-                        />
-                    </div>
-
-                    {/* Charts */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-                            className="lg:col-span-2 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700"
-                        >
-                            <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-6">Vote Centre Voters by Upazilla</h3>
-                            <div className="h-64 w-full">
-                                <ResponsiveContainer width="100%" height="100%">
-                                    <BarChart data={vcChartData}>
-                                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                                        <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b' }} />
-                                        <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b' }} />
-                                        <Tooltip
-                                            cursor={{ fill: '#f1f5f9' }}
-                                            contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                                        />
-                                        <Bar dataKey="voters" fill="#3b82f6" radius={[4, 4, 0, 0]} />
-                                    </BarChart>
-                                </ResponsiveContainer>
-                            </div>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
-                            className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700"
-                        >
-                            <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-6">Centre Gender Distribution</h3>
-                            <div className="h-64 w-full">
-                                <ResponsiveContainer width="100%" height="100%">
-                                    <PieChart>
-                                        <Pie
-                                            data={vcPieData}
-                                            cx="50%"
-                                            cy="50%"
-                                            innerRadius={60}
-                                            outerRadius={80}
-                                            paddingAngle={5}
-                                            dataKey="value"
-                                        >
-                                            {vcPieData.map((entry, index) => (
-                                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                                            ))}
-                                        </Pie>
-                                        <Tooltip />
-                                    </PieChart>
-                                </ResponsiveContainer>
-                            </div>
-                            <div className="flex justify-center gap-6 mt-4">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-3 h-3 rounded-full bg-indigo-500" />
-                                    <span className="text-sm text-slate-600 dark:text-slate-400">Male</span>
+                    {/* Section: Voter Analytics */}
+                    <div>
+                        <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4">Real-time Voter Insights</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                            <div className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm flex items-center space-x-4">
+                                <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+                                    <FaUsers size={20} />
                                 </div>
-                                <div className="flex items-center gap-2">
-                                    <div className="w-3 h-3 rounded-full bg-pink-500" />
-                                    <span className="text-sm text-slate-600 dark:text-slate-400">Female</span>
+                                <div>
+                                    <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">Registered Voters</p>
+                                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white">{analytics.total.toLocaleString()}</h3>
                                 </div>
                             </div>
-                        </motion.div>
-                    </div>
-                </div>
 
-                {/* Section: Map */}
-                <div>
-                    <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4">Geographic Distribution</h2>
-                    <div className="h-[calc(100vh-240px)] w-full rounded-xl overflow-hidden border border-gray-200 shadow-sm">
-                        <VoterMap voters={voters} />
-                    </div>
-                </div>
+                            <div className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm flex items-center space-x-4">
+                                <div className="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center text-pink-600">
+                                    <FaVenusMars size={20} />
+                                </div>
+                                <div>
+                                    <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">Gender Ratio</p>
+                                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
+                                        {analytics.male} <span className="text-sm text-gray-400 font-normal">M</span> / {analytics.female} <span className="text-sm text-gray-400 font-normal">F</span>
+                                    </h3>
+                                </div>
+                            </div>
 
-            </div>
+                            <div className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm flex items-center space-x-4">
+                                <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center text-green-600">
+                                    <FaMapMarkerAlt size={20} />
+                                </div>
+                                <div>
+                                    <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">Active Divisions</p>
+                                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white">{analytics.uniqueDivisions} / 8</h3>
+                                </div>
+                            </div>
+
+                            <div className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm flex items-center space-x-4">
+                                <div className="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center text-orange-600">
+                                    <FaIdCard size={20} />
+                                </div>
+                                <div>
+                                    <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">Avg. Voter Age</p>
+                                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white">{analytics.avgAge} Yrs</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Section: Vote Centre Analytics */}
+                    <div>
+                        <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4">Vote Centre Statistics</h2>
+
+                        {/* Cards */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                            <Card
+                                title="Total Centres"
+                                value={englishToBengaliNumber(vcStats.totalCentres)}
+                                icon={<HiOfficeBuilding className="text-2xl" />}
+                                gradient="bg-gradient-to-br from-violet-500 to-purple-600"
+                                delay={0}
+                            />
+                            <Card
+                                title="Total Centre Voters"
+                                value={englishToBengaliNumber(vcStats.totalVoters)}
+                                icon={<HiUserGroup className="text-2xl" />}
+                                gradient="bg-gradient-to-br from-blue-500 to-cyan-600"
+                                delay={0.1}
+                            />
+                            <Card
+                                title="Male Voters (Centre)"
+                                value={englishToBengaliNumber(vcStats.totalMale)}
+                                icon={<span className="text-xl font-bold">♂</span>}
+                                gradient="bg-gradient-to-br from-indigo-500 to-blue-600"
+                                delay={0.2}
+                            />
+                            <Card
+                                title="Female Voters (Centre)"
+                                value={englishToBengaliNumber(vcStats.totalFemale)}
+                                icon={<span className="text-xl font-bold">♀</span>}
+                                gradient="bg-gradient-to-br from-pink-500 to-rose-600"
+                                delay={0.3}
+                            />
+                        </div>
+
+                        {/* Charts */}
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
+                                className="lg:col-span-2 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700"
+                            >
+                                <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-6">Vote Centre Voters by Upazilla</h3>
+                                <div className="h-64 w-full">
+                                    <ResponsiveContainer width="100%" height="100%">
+                                        <BarChart data={vcChartData}>
+                                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                                            <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b' }} />
+                                            <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b' }} />
+                                            <Tooltip
+                                                cursor={{ fill: '#f1f5f9' }}
+                                                contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                                            />
+                                            <Bar dataKey="voters" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+                                        </BarChart>
+                                    </ResponsiveContainer>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
+                                className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700"
+                            >
+                                <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-6">Centre Gender Distribution</h3>
+                                <div className="h-64 w-full">
+                                    <ResponsiveContainer width="100%" height="100%">
+                                        <PieChart>
+                                            <Pie
+                                                data={vcPieData}
+                                                cx="50%"
+                                                cy="50%"
+                                                innerRadius={60}
+                                                outerRadius={80}
+                                                paddingAngle={5}
+                                                dataKey="value"
+                                            >
+                                                {vcPieData.map((entry, index) => (
+                                                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                                ))}
+                                            </Pie>
+                                            <Tooltip />
+                                        </PieChart>
+                                    </ResponsiveContainer>
+                                </div>
+                                <div className="flex justify-center gap-6 mt-4">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-3 h-3 rounded-full bg-indigo-500" />
+                                        <span className="text-sm text-slate-600 dark:text-slate-400">Male</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-3 h-3 rounded-full bg-pink-500" />
+                                        <span className="text-sm text-slate-600 dark:text-slate-400">Female</span>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+
+                    {/* Section: Map */}
+                    <div>
+                        <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4">Geographic Distribution</h2>
+                        <div className="h-[calc(100vh-240px)] w-full rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+                            <VoterMap voters={voters} />
+                        </div>
+                    </div>
+
+                </div>
+            </ProtectedRoute>
         </DefaultLayout>
     )
 }
