@@ -139,6 +139,10 @@ export default function AddCandidatePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Candidate Category</label>
+                <input type="text" name="candidate_category" value={formData.candidate_category} onChange={handleChange} className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder="e.g. Student, Engineer, Ex-President" />
+              </div>
+              <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">Membership Number</label>
                 <input type="text" name="membership_number" value={formData.membership_number} onChange={handleChange} className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
               </div>

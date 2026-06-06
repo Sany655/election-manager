@@ -135,6 +135,48 @@ const VoterFilters = ({
                                     ))}
                             </select>
                         </div>
+
+                        {/* Institution Filter */}
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                Institution
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Filter by institution..."
+                                value={filters.organization || ''}
+                                onChange={(e) => handleFilterChange('organization', e.target.value)}
+                                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                            />
+                        </div>
+
+                        {/* Profession Filter */}
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                Current Job / Profession
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Filter by job..."
+                                value={filters.profession || ''}
+                                onChange={(e) => handleFilterChange('profession', e.target.value)}
+                                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                            />
+                        </div>
+
+                        {/* Category Filter */}
+                        <div className="md:col-span-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                Voter Category
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Filter by category..."
+                                value={filters.category || ''}
+                                onChange={(e) => handleFilterChange('category', e.target.value)}
+                                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                            />
+                        </div>
                     </div>
 
                     {/* Clear Filters Button */}

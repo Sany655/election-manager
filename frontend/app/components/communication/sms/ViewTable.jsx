@@ -60,7 +60,10 @@ const ViewTable = ({ users = [], voters = [], title, token }) => {
     division_id: '',
     district_id: '',
     upazilla_id: '',
-    union_id: ''
+    union_id: '',
+    organization: '',
+    profession: '',
+    category: ''
   })
   const [loadingTeams, setLoadingTeams] = useState(false)
   const [votersList, setVotersList] = useState([])
@@ -162,6 +165,9 @@ const ViewTable = ({ users = [], voters = [], title, token }) => {
       if (filters.upazilla_id) queryParams.append('upazilla_id', filters.upazilla_id)
       if (filters.union_id) queryParams.append('union_id', filters.union_id)
       if (filters.name) queryParams.append('search', filters.name)
+      if (filters.organization) queryParams.append('organization', filters.organization)
+      if (filters.profession) queryParams.append('profession', filters.profession)
+      if (filters.category) queryParams.append('category', filters.category)
       queryParams.append('limit', 1000)
 
       const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/voters?${queryParams.toString()}`, {
@@ -905,8 +911,37 @@ const ViewTable = ({ users = [], voters = [], title, token }) => {
                         placeholder={`Search ${bulkRecipientType}...`}
                         value={filters.name}
                         onChange={(e) => handleFilterChange('name', e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm mb-2"
                       />
+                      {bulkRecipientType === 'voters' && (
+                        <div className="grid grid-cols-3 gap-2 mb-2">
+                          <input
+                            type="text"
+                            placeholder="Institute/Organization"
+                            value={filters.organization}
+                            onChange={(e) => handleFilterChange('organization', e.target.value)}
+                            className="w-full px-2 py-1.5 border border-gray-300 rounded text-sm"
+                          />
+                          <input
+                            type="text"
+                            placeholder="Current Employment/Profession"
+                            value={filters.profession}
+                            onChange={(e) => handleFilterChange('profession', e.target.value)}
+                            className="w-full px-2 py-1.5 border border-gray-300 rounded text-sm"
+                          />
+                          <select
+                            value={filters.category}
+                            onChange={(e) => handleFilterChange('category', e.target.value)}
+                            className="w-full px-2 py-1.5 border border-gray-300 rounded text-sm"
+                          >
+                            <option value="">Any Category</option>
+                            <option value="Engineer">Engineer</option>
+                            <option value="Student">Student</option>
+                            <option value="General">General</option>
+                            <option value="Ex-President">Ex-President</option>
+                          </select>
+                        </div>
+                      )}
                       <div className="grid grid-cols-2 gap-2">
                         <select
                           value={filters.division_id}

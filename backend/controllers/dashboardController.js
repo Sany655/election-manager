@@ -119,19 +119,18 @@ const { Op } = require('sequelize');
 //@desc     Get dashboard statistics
 //@access   Private
 const getDashboardStats = asyncHandler(async (req, res) => {
-    // 1. Candidate Info
-    // const candidateProfile = await CandidateProfile.findOne({
-    //     include: [{ model: User, as: 'user', attributes: ['name', 'avatar'] }] // Assuming association exists or needs to be manual if not defined
-    // });
-
-    // Fallback if no candidate profile
-    // const candidateData = {
-    //     name: candidateProfile?.user?.name || "Candidate Name",
-    //     constituency: "Constituency",
-    //     party: "Party Name",
-    //     winProbability: 75, // Mock for now
-    //     photo: candidateProfile?.photo_url || null
-    // };
+    // 1. Candidate Stats
+    const candidateRole = await Role.findOne({ where: { name: 'candidate' } });
+    let totalCandidates = 0;
+    if (candidateRole) {
+        totalCandidates = await User.count({
+            include: [{
+                model: Role,
+                as: 'roles',
+                where: { id: candidateRole.id }
+            }]
+        });
+    }
 
     // 2. Voter Stats
     const totalVoters = await Voter.count();
@@ -276,7 +275,9 @@ const getDashboardStats = asyncHandler(async (req, res) => {
         : 0;
 
     res.json({
-        // candidate: candidateData,
+        candidates: {
+            total: totalCandidates
+        },
         voterStats: {
             totalVoters: totalVoters, // This is our collected "Reach"
             targetedVoters: totalVoters * 1.2, // Mock target slightly higher

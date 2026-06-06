@@ -39,7 +39,10 @@ const VoterPage = () => {
         division: '',
         district: '',
         upazilla: '',
-        union: ''
+        union: '',
+        organization: '',
+        profession: '',
+        category: ''
     })
 
     // Location data state
@@ -84,7 +87,10 @@ const VoterPage = () => {
                 division_id: filters.division,
                 district_id: filters.district,
                 upazilla_id: filters.upazilla,
-                union_id: filters.union
+                union_id: filters.union,
+                organization: filters.organization,
+                profession: filters.profession,
+                category: filters.category
             }
             // Create query string from non-empty filters
             const queryParams = new URLSearchParams()

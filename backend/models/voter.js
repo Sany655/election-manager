@@ -68,6 +68,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true
     },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     // Location information stored as JSON
     division_id: {
       type: DataTypes.INTEGER,

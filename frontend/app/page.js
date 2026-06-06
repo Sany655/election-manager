@@ -66,6 +66,7 @@ export default function DashboardPage() {
               targetedVoters: 0,
               reachedVoters: 0
             },
+            candidates: { total: 0 },
             events: { upcoming: 0 },
             volunteers: { active: 0, total: 0 },
             pollingBooths: 0,
@@ -190,63 +191,35 @@ export default function DashboardPage() {
               </div>
             </div>
 
-            {/* Key Metrics Row - Hidden
+            {/* Key Metrics Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 relative overflow-hidden group hover:shadow-lg transition-all duration-300">
                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <FaTrophy className="text-6xl text-green-600" />
+                  <FaUsers className="text-6xl text-blue-600" />
                 </div>
                 <div className="relative z-10">
-                  <div className="w-12 h-12 bg-green-50 dark:bg-green-900/20 rounded-xl flex items-center justify-center mb-4">
-                    <FaTrophy className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 rounded-xl flex items-center justify-center mb-4">
+                    <FaUsers className="w-6 h-6 text-blue-600" />
                   </div>
                   <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
-                    {stats.candidate.winProbability}%
+                    {stats.voterStats?.totalVoters || 0}
                   </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Win Probability</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Total Voters</p>
                 </div>
               </div>
 
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 relative overflow-hidden group hover:shadow-lg transition-all duration-300">
                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <FaChartLine className="text-6xl text-blue-600" />
-                </div>
-                <div className="relative z-10 w-full">
-                  <div className="flex justify-between items-start">
-                    <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 rounded-xl flex items-center justify-center mb-4">
-                      <FaChartLine className="w-6 h-6 text-blue-600" />
-                    </div>
-                    <span className="text-xs font-semibold bg-blue-50 text-blue-600 px-2 py-1 rounded-full">{stats.campaignHealth}%</span>
-                  </div>
-
-                  <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
-                    {stats.campaignHealth}
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">Health Score</p>
-                  <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-1.5">
-                    <div
-                      className="bg-blue-500 h-1.5 rounded-full"
-                      style={{ width: `${stats.campaignHealth}%` }}
-                    ></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 relative overflow-hidden group hover:shadow-lg transition-all duration-300">
-                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <FaUsers className="text-6xl text-purple-600" />
+                  <FaUserCheck className="text-6xl text-purple-600" />
                 </div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-purple-50 dark:bg-purple-900/20 rounded-xl flex items-center justify-center mb-4">
-                    <FaUsers className="w-6 h-6 text-purple-600" />
+                    <FaUserCheck className="w-6 h-6 text-purple-600" />
                   </div>
                   <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
-                    {stats.voterStats.reachedVoters}
+                    {stats.candidates?.total || 0}
                   </p>
-                  <div className="flex justify-between items-end">
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Voters Reachable</p>
-                    <span className="text-xs text-purple-600 font-medium">Data Collected</span>
-                  </div>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Total Candidates</p>
                 </div>
               </div>
 
@@ -259,16 +232,30 @@ export default function DashboardPage() {
                     <FaUsersCog className="w-6 h-6 text-teal-600" />
                   </div>
                   <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
-                    {stats.volunteers.active}
+                    {stats.volunteers?.total || 0}
                   </p>
                   <div className="flex justify-between items-end">
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Active Volunteers</p>
-                    <span className="text-xs text-teal-600 font-medium">of {stats.volunteers.total} total</span>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">Total Volunteers</p>
+                    <span className="text-xs text-teal-600 font-medium">{stats.volunteers?.active || 0} Active</span>
                   </div>
                 </div>
               </div>
+
+              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 relative overflow-hidden group hover:shadow-lg transition-all duration-300">
+                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                  <FaVoteYea className="text-6xl text-red-600" />
+                </div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-red-50 dark:bg-red-900/20 rounded-xl flex items-center justify-center mb-4">
+                    <FaVoteYea className="w-6 h-6 text-red-600" />
+                  </div>
+                  <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
+                    {stats.pollingBooths || 0}
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Polling Centres</p>
+                </div>
+              </div>
             </div>
-            */}
 
             {/* Module Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">

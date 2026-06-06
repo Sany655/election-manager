@@ -14,7 +14,8 @@ import {
   FaUserCheck,
   FaChartPie,
   FaWhatsapp,
-  FaUserTie
+  FaUserTie,
+  FaPhone
 } from "react-icons/fa";
 import { FaLandMineOn } from "react-icons/fa6";
 import {
@@ -47,6 +48,18 @@ const menu = [
     icon: <TbCheckbox />,
     path: "/9th-election",
     permission: 'view-election-9th',
+  },
+  {
+    title: "News",
+    icon: <FaFileAlt />,
+    path: "/news",
+    permission: 'view-news',
+  },
+  {
+    title: "Election Info",
+    icon: <FaCalendarDay />,
+    path: "/election-info",
+    permission: 'view-election-info',
   },
   {
     title: "Pooling Day Command Center",
@@ -304,6 +317,12 @@ const menu = [
         path: "/communication/email",
         permission: 'view-email',
       },
+      {
+        title: "Push Notifications",
+        icon: <MdOutlineMessage />,
+        path: "/communication/push",
+        permission: 'view-push-notifications',
+      },
     ],
   },
   {
@@ -329,6 +348,12 @@ const menu = [
         permission: 'view-roles',
       },
     ],
+  },
+  {
+    title: "Contact QP",
+    icon: <FaPhone />,
+    path: "/contact",
+    permission: 'view-dashboard', // Everyone can view contact
   },
 ];
 

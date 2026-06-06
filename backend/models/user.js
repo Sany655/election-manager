@@ -211,6 +211,9 @@ module.exports = (sequelize, DataTypes) => {
     joining_date: {
       type: DataTypes.DATEONLY,
     },
+    candidate_category: {
+      type: DataTypes.STRING,
+    },
     createdBy: {
       type: DataTypes.INTEGER,
     },

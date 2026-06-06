@@ -103,6 +103,8 @@ const VoterAddModal = ({ isOpen, onClose, onSubmit, initialData }) => {
         nid: initialData.nid || "",
         phone: initialData.phone || "",
         profession: initialData.profession || "",
+        organization: initialData.organization || "",
+        category: initialData.category || "",
         division: initialData.division_id || "",
         district: initialData.district_id || "",
         upazilla: initialData.upazilla_id || "",
@@ -122,6 +124,8 @@ const VoterAddModal = ({ isOpen, onClose, onSubmit, initialData }) => {
         nid: "",
         phone: "",
         profession: "",
+        organization: "",
+        category: "",
         division: "",
         district: "",
         upazilla: "",
@@ -181,6 +185,8 @@ const VoterAddModal = ({ isOpen, onClose, onSubmit, initialData }) => {
       nid: formData.nid.trim(),
       phone: formData.phone.trim() || null,
       profession: formData.profession.trim() || null,
+      organization: formData.organization.trim() || null,
+      category: formData.category.trim() || null,
       division_id: formData.division,
       district_id: formData.district,
       upazilla_id: formData.upazilla,
@@ -322,19 +328,49 @@ const VoterAddModal = ({ isOpen, onClose, onSubmit, initialData }) => {
               </div>
             </div>
 
-            {/* Profession (Optional) */}
-            <div className="mb-4">
-              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                Profession <span className="text-gray-400 text-xs">(Optional)</span>
-              </label>
-              <input
-                type="text"
-                name="profession"
-                value={formData.profession}
-                onChange={handleChange}
-                placeholder="Enter profession (e.g., Teacher, Engineer)"
-                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-              />
+            {/* Profession, Organization, and Category Row */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                  Profession <span className="text-gray-400 text-xs">(Optional)</span>
+                </label>
+                <input
+                  type="text"
+                  name="profession"
+                  value={formData.profession || ''}
+                  onChange={handleChange}
+                  placeholder="e.g. Teacher, Engineer"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                  Institution/Organization <span className="text-gray-400 text-xs">(Optional)</span>
+                </label>
+                <input
+                  type="text"
+                  name="organization"
+                  value={formData.organization || ''}
+                  onChange={handleChange}
+                  placeholder="e.g. BUET, Google"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                  Voter Category <span className="text-gray-400 text-xs">(Optional)</span>
+                </label>
+                <input
+                  type="text"
+                  name="category"
+                  value={formData.category || ''}
+                  onChange={handleChange}
+                  placeholder="e.g. Ex-President, General"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                />
+              </div>
             </div>
           </div>
 

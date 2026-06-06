@@ -44,7 +44,7 @@ const { manageZktecoDevice } = require('./utils/connectZKTecho');
 const eventGrandTotalRoutes = require('./routes/eventGrandTotalRoutes');
 const organizerRoutes = require("./routes/organizerRoutes");
 const surveyRoutes = require("./routes/surveyRoutes");
-
+const newsRoutes = require('./routes/newsRoutes');
 const PORT = process.env.PORT || 8001;
 const app = express();
 
@@ -112,6 +112,7 @@ app.use('/api/event-cost', eventCostRoutes);
 app.use('/api/event-grand-total', eventGrandTotalRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/whatsapp', require('./routes/message/whatsappRoutes'));
+app.use('/api/push', require('./routes/message/pushNotificationRoutes'));
 app.use('/api/geo', geoRoutes);
 app.use('/api/divisions', divisionRoutes);
 app.use('/api/districts', districtRoutes);
@@ -122,8 +123,8 @@ app.use('/api/surveys', surveyRoutes);
 app.use('/api/social-analytics', require('./routes/socialAnalyticsRoutes'));
 app.use('/api/dashboard', require('./routes/dashboardRoutes'));
 app.use('/api/command-center', require('./routes/commandCenterRoutes'));
-
-
+app.use('/api/news', newsRoutes);
+app.use('/api/election-info', require('./routes/electionInfoRoutes'));
 //use for integrated application
 // if (process.env.NODE_ENV === 'prod') {
 //   app.use(express.static(path.join(__dirname, '../frontend/build'))); // Adjust path here

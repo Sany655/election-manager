@@ -20,7 +20,8 @@ const createVoter = asyncHandler(async (req, res, next) => {
         upazilla_id,
         union_id,
         ward,
-        voter_center
+        voter_center,
+        category
     } = req.body;
 
     // Check if voter with same NID already exists
@@ -41,7 +42,8 @@ const createVoter = asyncHandler(async (req, res, next) => {
         upazilla_id,
         union_id,
         ward,
-        voter_center
+        voter_center,
+        category: category || null
     });
 
     return res.status(201).json({
@@ -61,6 +63,9 @@ const getAllVoters = asyncHandler(async (req, res, next) => {
         upazilla_id,
         union_id,
         search,
+        organization,
+        profession,
+        category,
         page = 1,
         limit = 20
     } = req.query;
@@ -80,6 +85,15 @@ const getAllVoters = asyncHandler(async (req, res, next) => {
     }
     if (union_id) {
         whereClause.union_id = union_id;
+    }
+    if (organization) {
+        whereClause.organization = { [Op.like]: `%${organization}%` };
+    }
+    if (profession) {
+        whereClause.profession = { [Op.like]: `%${profession}%` };
+    }
+    if (category) {
+        whereClause.category = category;
     }
 
     // Search functionality
@@ -179,7 +193,8 @@ const updateVoter = asyncHandler(async (req, res, next) => {
             upazilla_id,
             union_id,
             ward,
-            voter_center
+            voter_center,
+            category
         } = req.body;
 
         const voter = await Voter.findByPk(id);
@@ -253,6 +268,11 @@ const updateVoter = asyncHandler(async (req, res, next) => {
 
         if (voter_center && voter.voter_center !== voter_center) {
             updatedData.voter_center = voter_center;
+            isChanged = true;
+        }
+
+        if (category !== undefined && voter.category !== category) {
+            updatedData.category = category;
             isChanged = true;
         }
 
