@@ -37,4 +37,3 @@ next-env.d.ts
 .env
 ecosystem.config.js
 # /app/utils/constants.js
-app/\(auth\)/auth/login/page.js

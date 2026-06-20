@@ -11,7 +11,10 @@ const VoterCard = ({ voter, onEdit, onDelete }) => {
           </div>
           <div className="ml-4">
             <div className="text-sm font-semibold text-gray-900">{voter.name || 'N/A'}</div>
-            <div className="text-xs text-gray-500">Age: {voter.age || 'N/A'} • {voter.gender || 'N/A'}</div>
+            <div className="text-xs text-gray-500">
+              {voter.organization || 'No Div'} • {voter.category || 'No Univ'} 
+              {voter.passing_year ? ` • Batch ${voter.passing_year}` : ''}
+            </div>
           </div>
         </div>
       </td>
@@ -24,23 +27,32 @@ const VoterCard = ({ voter, onEdit, onDelete }) => {
       <td className="px-6 py-4">
         <div className="flex items-center text-sm text-gray-900">
           <FaPhone className="mr-2 text-gray-400" />
-          <span>{voter.phone || 'N/A'}</span>
+          <span>{voter.mobile || voter.phone || 'N/A'}</span>
         </div>
+        {voter.email && (
+          <div className="text-xs text-gray-500 ml-6">
+            {voter.email}
+          </div>
+        )}
       </td>
       <td className="px-6 py-4">
         <div className="flex items-center text-sm text-gray-900">
           <FaBriefcase className="mr-2 text-gray-400" />
-          <span>{voter.profession && !/^[0-9০-৯\/\.\-\s]+$/.test(voter.profession) ? voter.profession : 'N/A'}</span>
+          <span>{voter.designation || voter.profession || 'N/A'}</span>
         </div>
       </td>
       <td className="px-6 py-4">
         <div className="flex items-center text-sm text-gray-900 mb-1">
           <FaMapMarkerAlt className="mr-2 text-gray-400 flex-shrink-0" />
-          <span>{voter.division?.name || 'N/A'}</span>
+          <span className="truncate max-w-[200px]" title={voter.address || voter.voter_center || 'No location data'}>
+            {voter.address || voter.voter_center || 'No location data'}
+          </span>
         </div>
-        <div className="text-xs text-gray-500 ml-6">
-          {[voter.district?.name, voter.upazilla?.name, voter.union?.name].filter(Boolean).join(', ') || 'No location data'}
-        </div>
+        {voter.dues_amount != null && (
+          <div className="text-xs text-red-500 font-semibold ml-6">
+            Dues: ৳{voter.dues_amount} ({voter.years_of_dues} yrs)
+          </div>
+        )}
       </td>
       <td className="px-6 py-4">
         <div className="flex items-center gap-2">

@@ -5,13 +5,7 @@ const {
 
 module.exports = (sequelize, DataTypes) => {
   class Voter extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // Define associations here if needed
       Voter.belongsTo(models.Division, { foreignKey: 'division_id', as: 'division' });
       Voter.belongsTo(models.District, { foreignKey: 'district_id', as: 'district' });
       Voter.belongsTo(models.Upazilla, { foreignKey: 'upazilla_id', as: 'upazilla' });
@@ -49,15 +43,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     age: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     gender: {
       type: DataTypes.ENUM('Male', 'Female', 'Other'),
-      allowNull: false
+      allowNull: true
     },
     nid: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       unique: true
     },
     phone: {
@@ -72,30 +66,49 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true
     },
-    // Location information stored as JSON
+    passing_year: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    paid_upto: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    years_of_dues: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    dues_amount: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: true
+    },
     division_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     district_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     upazilla_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     union_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     ward: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     voter_center: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     }
   }, {
     sequelize,

@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import items from '../../utils/sidebar';
 import SidebarItem from './SidebarItem';
 import Image from 'next/image';
-import logo from '@/app/public/images/aeb_logo.png';
+import logo from '@/app/public/images/ieb logo.jpeg';
 import { APP_NAME, TAGLINE } from '@/app/utils/constants';
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
