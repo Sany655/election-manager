@@ -1,0 +1,1451 @@
+{
+  "communities": {
+    "0": [
+      "package",
+      "package_dependencies",
+      "package_dependencies_axios",
+      "package_dependencies_class_variance_authority",
+      "package_dependencies_clsx",
+      "package_dependencies_date_fns",
+      "package_dependencies_dayjs",
+      "package_dependencies_framer_motion",
+      "package_dependencies_leaflet",
+      "package_dependencies_next",
+      "package_dependencies_radix_ui_react_avatar",
+      "package_dependencies_radix_ui_react_dialog",
+      "package_dependencies_radix_ui_react_label",
+      "package_dependencies_radix_ui_react_popover",
+      "package_dependencies_radix_ui_react_select",
+      "package_dependencies_radix_ui_react_separator",
+      "package_dependencies_radix_ui_react_slot",
+      "package_dependencies_radix_ui_react_tabs",
+      "package_dependencies_react",
+      "package_dependencies_react_day_picker",
+      "package_dependencies_react_dom",
+      "package_dependencies_react_hot_toast",
+      "package_dependencies_react_icons",
+      "package_dependencies_react_leaflet",
+      "package_dependencies_recharts",
+      "package_dependencies_sharp",
+      "package_dependencies_tailwind_merge",
+      "package_dependencies_tailwindcss_animate",
+      "package_devdependencies",
+      "package_devdependencies_postcss",
+      "package_devdependencies_tailwindcss",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_start",
+      "package_version"
+    ],
+    "1": [
+      "app_auth_auth_login_page",
+      "app_auth_auth_login_page_login",
+      "app_components_area_viewtable_viewtable",
+      "app_components_clickoutside",
+      "app_components_clickoutside_clickoutside",
+      "app_components_header_dropdownuser",
+      "app_components_header_dropdownuser_dropdownuser",
+      "app_components_header_index",
+      "app_components_header_index_header",
+      "app_components_layout_candidatelayout",
+      "app_components_layout_candidatelayout_candidatelayout",
+      "app_components_protectedroute_protectedroute",
+      "app_components_sidebar_index",
+      "app_components_sidebar_index_sidebar",
+      "app_components_sidebar_sidebaritem",
+      "app_components_sidebar_sidebaritem_sidebaritem",
+      "app_components_user_logout",
+      "app_components_user_logout_logoutbutton",
+      "app_context_auth_context",
+      "app_context_auth_context_authcontext",
+      "app_context_auth_context_authprovider",
+      "app_context_auth_context_useauthcontext",
+      "app_layout",
+      "app_layout_geistmono",
+      "app_layout_geistsans",
+      "app_layout_metadata",
+      "app_layout_rootlayout",
+      "app_main_users_profile_page_profilepage",
+      "app_utils_sidebar",
+      "app_utils_sidebar_menu",
+      "components_ui_avatar",
+      "components_ui_avatar_avatar",
+      "components_ui_avatar_avatarfallback",
+      "components_ui_avatar_avatarimage"
+    ],
+    "2": [
+      "app_components_location_locationaddmodal",
+      "app_components_location_locationaddmodal_locationaddmodal",
+      "app_components_location_locationeditmodal",
+      "app_components_location_locationeditmodal_locationeditmodal",
+      "app_components_location_viewtable",
+      "app_components_tasks_messagemodal",
+      "app_main_attendance_manual_page",
+      "app_main_attendance_manual_page_manualattendancepage",
+      "app_main_users_profile_page",
+      "app_survey_uniqueid_page",
+      "app_survey_uniqueid_page_publicsurveypage",
+      "app_unauthorized_page",
+      "app_unauthorized_page_unauthorizedpage",
+      "components_ui_button",
+      "components_ui_button_button",
+      "components_ui_button_buttonvariants",
+      "components_ui_calendar",
+      "components_ui_calendar_calendar",
+      "components_ui_input",
+      "components_ui_input_input",
+      "components_ui_label",
+      "components_ui_label_label",
+      "components_ui_label_labelvariants",
+      "components_ui_textarea",
+      "components_ui_textarea_textarea",
+      "lib_utils"
+    ],
+    "3": [
+      "app_candidate_candidate_portal_page",
+      "app_candidate_candidate_portal_page_candidateportal",
+      "app_components_protectedroute",
+      "app_components_unauthorized",
+      "app_components_unauthorized_unauthorizedpage",
+      "app_main_9th_election_page",
+      "app_main_9th_election_page_electionresultspage",
+      "app_main_ai_social_analytics_id_page",
+      "app_main_ai_social_analytics_id_page_socialanalysisdetailpage",
+      "app_main_ai_social_analytics_page",
+      "app_main_ai_social_analytics_page_socialanalyticspage",
+      "app_main_ai_social_analytics_page_statcard",
+      "app_main_attendance_report_id_page",
+      "app_main_attendance_report_id_page_page",
+      "app_main_candidates_add_page",
+      "app_main_candidates_add_page_addcandidatepage",
+      "app_main_command_center_incident_monitoring_page",
+      "app_main_command_center_incident_monitoring_page_incidentmonitoring",
+      "app_main_command_center_incident_monitoring_page_mapcomponent",
+      "app_main_command_center_overview_page",
+      "app_main_command_center_overview_page_commandcenteroverview",
+      "app_main_command_center_overview_page_mapcomponent",
+      "app_main_users_add_page",
+      "app_main_users_add_page_page"
+    ],
+    "4": [
+      "app_components_layout_defaultlayout",
+      "app_components_layout_defaultlayout_defaultlayout",
+      "app_components_loader",
+      "app_components_loader_loader",
+      "app_main_candidates_edit_id_page",
+      "app_main_candidates_edit_id_page_editcandidatepage",
+      "app_main_candidates_view_page",
+      "app_main_candidates_view_page_candidatespage",
+      "app_main_communication_push_page",
+      "app_main_communication_push_page_pushnotificationpage",
+      "app_main_contact_page",
+      "app_main_contact_page_contactpage",
+      "app_main_devices_page",
+      "app_main_devices_page_page",
+      "app_main_election_info_page",
+      "app_main_election_info_page_electioninfopage",
+      "app_main_news_page",
+      "app_main_news_page_newspage",
+      "app_not_found",
+      "app_not_found_notfound",
+      "app_page",
+      "app_page_dashboardpage",
+      "app_page_iconmap"
+    ],
+    "5": [
+      "app_components_campaign_roadmap_milestoneaddmodal",
+      "app_components_campaign_roadmap_milestoneaddmodal_milestoneaddmodal",
+      "app_components_campaign_roadmap_milestonecard",
+      "app_components_campaign_roadmap_milestonecard_getgradient",
+      "app_components_campaign_roadmap_milestonecard_milestonecard",
+      "app_components_campaign_roadmap_milestoneeditmodal",
+      "app_components_campaign_roadmap_milestoneeditmodal_milestoneeditmodal",
+      "app_components_campaign_roadmap_milestonehovercard",
+      "app_components_campaign_roadmap_milestonehovercard_getgradient",
+      "app_components_campaign_roadmap_milestonehovercard_milestonehovercard",
+      "app_components_campaign_roadmap_roadmapganttview",
+      "app_components_campaign_roadmap_roadmapganttview_getgradient",
+      "app_components_campaign_roadmap_roadmapganttview_roadmapganttview",
+      "app_components_campaign_roadmap_timelineitem",
+      "app_components_campaign_roadmap_timelineitem_timelineitem",
+      "app_components_campaign_roadmap_wavyconnector",
+      "app_components_campaign_roadmap_wavyconnector_wavyconnector",
+      "app_main_campaign_roadmap_page",
+      "app_main_campaign_roadmap_page_fetchcampaigns",
+      "app_main_campaign_roadmap_page_roadmappage",
+      "app_main_campaign_roadmap_roadmapclient",
+      "app_main_campaign_roadmap_roadmapclient_roadmapclient"
+    ],
+    "6": [
+      "app_components_attendance_allviewtable",
+      "app_components_attendance_allviewtable_viewtable",
+      "app_components_attendance_datepicker",
+      "app_components_attendance_datepicker_datepicker",
+      "app_components_attendance_datepicker_datepickerwithrange",
+      "app_components_attendance_datepicker_formatdate",
+      "app_components_attendance_datepicker_isvaliddate",
+      "app_components_attendance_reportdetails",
+      "app_components_attendance_reportdetails_attendancedetails",
+      "app_components_attendance_viewtable",
+      "app_components_attendance_viewtable_viewtable",
+      "app_components_organizers_resourcedetailsmodal",
+      "app_components_organizers_resourcedetailsmodal_resourcedetailsmodal",
+      "app_components_pagination",
+      "app_components_pagination_pagination",
+      "app_components_resource_resourcedetailsmodal",
+      "app_components_resource_resourcedetailsmodal_resourcedetailsmodal",
+      "app_utils_constants",
+      "components_ui_popover",
+      "components_ui_popover_popovercontent"
+    ],
+    "7": [
+      "app_components_event_overview",
+      "app_components_event_overview_overview",
+      "app_main_event_overview_page",
+      "app_main_event_overview_page_fetchdesignations",
+      "app_main_event_overview_page_fetchevents",
+      "app_main_event_overview_page_fetchlocations",
+      "app_main_event_overview_page_fetchpolicies",
+      "app_main_event_overview_page_fetchuserroles",
+      "app_main_event_overview_page_page",
+      "app_main_resources_view_page",
+      "app_main_resources_view_page_fetchresources",
+      "app_main_resources_view_page_page",
+      "app_main_volunteer_overview_page",
+      "app_main_volunteer_overview_page_fetchdesignations",
+      "app_main_volunteer_overview_page_fetchlocations",
+      "app_main_volunteer_overview_page_fetchpolicies",
+      "app_main_volunteer_overview_page_fetchuserroles",
+      "app_main_volunteer_overview_page_fetchvolunteerstats",
+      "app_main_volunteer_overview_page_page"
+    ],
+    "8": [
+      "components",
+      "components_aliases",
+      "components_aliases_components",
+      "components_aliases_hooks",
+      "components_aliases_lib",
+      "components_aliases_ui",
+      "components_aliases_utils",
+      "components_iconlibrary",
+      "components_rsc",
+      "components_schema",
+      "components_style",
+      "components_tailwind",
+      "components_tailwind_basecolor",
+      "components_tailwind_config",
+      "components_tailwind_css",
+      "components_tailwind_cssvariables",
+      "components_tailwind_prefix",
+      "components_tsx"
+    ],
+    "9": [
+      "app_components_communication_wa_viewtable",
+      "app_components_communication_wa_viewtable_viewtable",
+      "app_components_tasks_messagemodal_messagemodal",
+      "app_components_tasks_policyaddmodal",
+      "app_components_tasks_policyaddmodal_policyaddmodal",
+      "app_components_tasks_policyeditmodal",
+      "app_components_tasks_policyeditmodal_policyeditmodal",
+      "app_components_tasks_setpolicymodal",
+      "app_components_tasks_setpolicymodal_assignpolicymodal",
+      "app_components_tasks_viewtable",
+      "app_components_tasks_viewtable_viewtable",
+      "app_context_whatsapp_context",
+      "app_context_whatsapp_context_usewhatsapp",
+      "app_context_whatsapp_context_whatsappcontext",
+      "app_context_whatsapp_context_whatsappprovider",
+      "app_main_layout",
+      "app_main_layout_mainlayout"
+    ],
+    "10": [
+      "app_components_rff_rffaddmodal",
+      "app_components_rff_rffaddmodal_rffaddmodal",
+      "app_components_rff_rffeditmodal",
+      "app_components_rff_rffeditmodal_rffeditmodal",
+      "app_components_rff_viewtable",
+      "app_components_rff_viewtable_viewtable",
+      "app_main_communication_wa_page",
+      "app_main_communication_wa_page_page",
+      "app_main_event_types_view_page",
+      "app_main_event_types_view_page_fetcheventtypes",
+      "app_main_event_types_view_page_page",
+      "app_main_location_district_view_page",
+      "app_main_location_district_view_page_fetchdata",
+      "app_main_location_district_view_page_page",
+      "app_main_location_upazilla_view_page",
+      "app_main_location_upazilla_view_page_fetchdata",
+      "app_main_location_upazilla_view_page_page"
+    ],
+    "11": [
+      "app_components_class_classaddmodal",
+      "app_components_class_classaddmodal_classaddmodal",
+      "app_components_class_classeditmodal",
+      "app_components_class_classeditmodal_classeditmodal",
+      "app_components_class_viewtable",
+      "app_components_class_viewtable_viewtable",
+      "app_components_devices_devices_devices",
+      "app_components_employee_employeeeditmodal",
+      "app_components_employee_employeeeditmodal_employeeeditmodal",
+      "app_components_employee_viewtable",
+      "app_components_employee_viewtable_viewtable",
+      "app_components_location_viewtable_viewtable",
+      "app_components_tasks_set_viewtable",
+      "app_components_tasks_set_viewtable_viewtable",
+      "app_hooks_useconfirmdelete",
+      "app_hooks_useconfirmdelete_useconfirmdelete"
+    ],
+    "12": [
+      "kimchi_skills_graphify_references_add_watch",
+      "kimchi_skills_graphify_references_exports",
+      "kimchi_skills_graphify_references_extraction_spec",
+      "kimchi_skills_graphify_references_github_and_merge",
+      "kimchi_skills_graphify_references_hooks",
+      "kimchi_skills_graphify_references_query",
+      "kimchi_skills_graphify_references_transcribe",
+      "kimchi_skills_graphify_references_update",
+      "kimchi_skills_graphify_skill_add",
+      "kimchi_skills_graphify_skill_explain",
+      "kimchi_skills_graphify_skill_graphify",
+      "kimchi_skills_graphify_skill_honesty_rules",
+      "kimchi_skills_graphify_skill_path",
+      "kimchi_skills_graphify_skill_pipeline",
+      "kimchi_skills_graphify_skill_query",
+      "kimchi_skills_graphify_skill_watch"
+    ],
+    "13": [
+      "app_components_area_areaaddmodal",
+      "app_components_area_areaaddmodal_areaaddmodal",
+      "app_components_area_areaeditmodal",
+      "app_components_area_areaeditmodal_areaeditmodal",
+      "app_components_area_viewtable",
+      "app_components_devices_devices",
+      "app_components_employee_permission_permissioneditmodal",
+      "app_components_employee_permission_permissioneditmodal_permissioneditmodal",
+      "app_components_employee_permission_permissionsaddmodal",
+      "app_components_employee_permission_permissionsaddmodal_permissionaddmodal",
+      "app_components_employee_permission_viewtable",
+      "app_components_employee_permission_viewtable_viewtable",
+      "app_components_permissiongate",
+      "app_components_permissiongate_permissiongate"
+    ],
+    "14": [
+      "app_components_center_centeraddmodal",
+      "app_components_center_centeraddmodal_centeraddmodal",
+      "app_components_employee_employeeaddmodal",
+      "app_components_employee_employeeaddmodal_employeeaddmodal",
+      "app_utils_helpers_getauthtoken",
+      "app_utils_locationapi",
+      "app_utils_locationapi_divisions",
+      "app_utils_locationapi_fetchdistricts",
+      "app_utils_locationapi_fetchdivisions",
+      "app_utils_locationapi_fetchunions",
+      "app_utils_locationapi_fetchupazillas",
+      "app_utils_locationapi_getdivisionbyid",
+      "app_utils_locationapi_getdivisionname"
+    ],
+    "15": [
+      "app_components_breadcrumb",
+      "app_components_breadcrumb_breadcrumb",
+      "app_components_employee_employeedetails",
+      "app_components_employee_employeedetails_employeedetails",
+      "app_components_user_userdetails",
+      "app_components_user_userdetails_userdetails",
+      "app_main_users_view_id_page",
+      "app_main_users_view_id_page_fetchuser",
+      "app_main_users_view_id_page_page",
+      "app_main_volunteer_view_id_page",
+      "app_main_volunteer_view_id_page_fetchuser",
+      "app_main_volunteer_view_id_page_page"
+    ],
+    "16": [
+      "app_main_ai_surveys_uniqueid_report_page",
+      "app_main_ai_surveys_uniqueid_report_page_circlemarker",
+      "app_main_ai_surveys_uniqueid_report_page_colors",
+      "app_main_ai_surveys_uniqueid_report_page_getcolorintensity",
+      "app_main_ai_surveys_uniqueid_report_page_getwordfrequency",
+      "app_main_ai_surveys_uniqueid_report_page_heatmap_colors",
+      "app_main_ai_surveys_uniqueid_report_page_mapcontainer",
+      "app_main_ai_surveys_uniqueid_report_page_mapupdater",
+      "app_main_ai_surveys_uniqueid_report_page_popup",
+      "app_main_ai_surveys_uniqueid_report_page_surveyreport",
+      "app_main_ai_surveys_uniqueid_report_page_tilelayer"
+    ],
+    "17": [
+      "components_ui_badge",
+      "components_ui_badge_badge",
+      "components_ui_badge_badgevariants",
+      "components_ui_dialog",
+      "components_ui_dialog_dialogcontent",
+      "components_ui_dialog_dialogdescription",
+      "components_ui_dialog_dialogfooter",
+      "components_ui_dialog_dialogheader",
+      "components_ui_dialog_dialogoverlay",
+      "components_ui_dialog_dialogtitle",
+      "lib_utils_cn"
+    ],
+    "18": [
+      "app_components_command_center_agentaddmodal",
+      "app_components_command_center_agentaddmodal_agentaddmodal",
+      "app_components_command_center_agenteditmodal",
+      "app_components_command_center_agenteditmodal_agenteditmodal",
+      "app_main_command_center_agent_setup_page",
+      "app_main_command_center_agent_setup_page_agentsetup",
+      "app_utils_helpers",
+      "app_utils_helpers_convertminutestohrmin",
+      "app_utils_helpers_formatdatetime",
+      "app_utils_helpers_formatlastseen"
+    ],
+    "19": [
+      "app_components_voter_voteraddmodal",
+      "app_components_voter_voteraddmodal_voteraddmodal",
+      "app_components_voter_votercard",
+      "app_components_voter_votercard_votercard",
+      "app_components_voter_voterfilters",
+      "app_components_voter_voterfilters_voterfilters",
+      "app_components_voter_voterpagination",
+      "app_components_voter_voterpagination_voterpagination",
+      "app_main_voter_management_voters_page",
+      "app_main_voter_management_voters_page_voterpage"
+    ],
+    "20": [
+      "app_main_ai_questionaire_page",
+      "app_main_ai_questionaire_page_questionaire",
+      "app_main_ai_questionaire_page_questionairecontent",
+      "components_ui_separator",
+      "components_ui_separator_separator",
+      "components_ui_tabs",
+      "components_ui_tabs_tabscontent",
+      "components_ui_tabs_tabslist",
+      "components_ui_tabs_tabstrigger"
+    ],
+    "21": [
+      "app_public_images_aeb_logo",
+      "app_public_images_bnp_logo",
+      "app_public_images_no_image",
+      "app_public_images_qp",
+      "app_public_images_remark",
+      "app_public_images_remarktext",
+      "app_public_images_remarktextonly",
+      "readme_gitlab_repository",
+      "readme_remark_attendance_front"
+    ],
+    "22": [
+      "app_utils_voterapi",
+      "app_utils_voterapi_createvoter",
+      "app_utils_voterapi_deletevoter",
+      "app_utils_voterapi_fetchvoterbyid",
+      "app_utils_voterapi_fetchvoters",
+      "app_utils_voterapi_fetchvoterstats",
+      "app_utils_voterapi_getauthheaders",
+      "app_utils_voterapi_getauthtoken",
+      "app_utils_voterapi_updatevoter"
+    ],
+    "23": [
+      "components_ui_table",
+      "components_ui_table_table",
+      "components_ui_table_tablebody",
+      "components_ui_table_tablecaption",
+      "components_ui_table_tablecell",
+      "components_ui_table_tablefooter",
+      "components_ui_table_tablehead",
+      "components_ui_table_tableheader",
+      "components_ui_table_tablerow"
+    ],
+    "24": [
+      "app_components_desingation_designationaddmodal",
+      "app_components_desingation_designationaddmodal_designationaddmodal",
+      "app_components_desingation_designationeditmodal",
+      "app_components_desingation_designationeditmodal_designationeditmodal",
+      "app_components_desingation_designationsetmodal",
+      "app_components_desingation_designationsetmodal_designationsetmodal",
+      "app_components_desingation_viewtable",
+      "app_components_desingation_viewtable_viewtable"
+    ],
+    "25": [
+      "app_components_employee_volunteer_team_assignteammembermodal",
+      "app_components_employee_volunteer_team_assignteammembermodal_assignteammembermodal",
+      "app_components_employee_volunteer_team_teamaddmodal",
+      "app_components_employee_volunteer_team_teamaddmodal_teamaddmodal",
+      "app_components_employee_volunteer_team_teameditmodal",
+      "app_components_employee_volunteer_team_teameditmodal_teameditmodal",
+      "app_components_employee_volunteer_team_viewtable",
+      "app_components_employee_volunteer_team_viewtable_viewtable"
+    ],
+    "26": [
+      "app_components_event_assignteammodal",
+      "app_components_event_assignteammodal_assignteammodal",
+      "app_components_event_eventaddmodal",
+      "app_components_event_eventaddmodal_eventaddmodal",
+      "app_components_event_eventeditmodal",
+      "app_components_event_eventeditmodal_eventeditmodal",
+      "app_components_event_viewtable",
+      "app_components_event_viewtable_viewtable"
+    ],
+    "27": [
+      "app_components_event_eventdetailsmodal",
+      "app_components_event_eventdetailsmodal_budgetrow",
+      "app_components_event_eventdetailsmodal_dateitem",
+      "app_components_event_eventdetailsmodal_detailrow",
+      "app_components_event_eventdetailsmodal_eventdetailsmodal",
+      "app_components_event_eventdetailsmodal_locationitem",
+      "app_components_event_eventresourcesection",
+      "app_components_event_eventresourcesection_eventresourcesection"
+    ],
+    "28": [
+      "app_components_organizers_organizeraddmodal",
+      "app_components_organizers_organizeraddmodal_organizeraddmodal",
+      "app_components_organizers_organizereditmodal",
+      "app_components_organizers_organizereditmodal_organizereditmodal",
+      "app_components_organizers_overview",
+      "app_components_organizers_overview_organizeroverview",
+      "app_components_organizers_viewtable",
+      "app_components_organizers_viewtable_organizerviewtable"
+    ],
+    "29": [
+      "app_components_resource_overview",
+      "app_components_resource_overview_overview",
+      "app_components_resource_resourceaddmodal",
+      "app_components_resource_resourceaddmodal_resourceaddmodal",
+      "app_components_resource_resourceeditmodal",
+      "app_components_resource_resourceeditmodal_resourceeditmodal",
+      "app_components_resource_viewtable",
+      "app_components_resource_viewtable_viewtable"
+    ],
+    "30": [
+      "app_components_tasks_holiday_holidayaddmodal",
+      "app_components_tasks_holiday_holidayaddmodal_holidayaddmodal",
+      "app_components_tasks_holiday_holidayeditmodal",
+      "app_components_tasks_holiday_holidayeditmodal_holidayeditmodal",
+      "app_components_tasks_holiday_holidaysetmodal",
+      "app_components_tasks_holiday_holidaysetmodal_assignholidaymodal",
+      "app_components_tasks_holiday_viewtable",
+      "app_components_tasks_holiday_viewtable_viewtable"
+    ],
+    "31": [
+      "app_components_ui_spinner",
+      "app_components_ui_spinner_loadingstate",
+      "app_components_ui_spinner_spinner",
+      "app_main_ai_surveys_page",
+      "app_main_ai_surveys_page_surveys",
+      "app_main_ai_surveys_uniqueid_edit_page",
+      "app_main_ai_surveys_uniqueid_edit_page_editsurveypage",
+      "app_main_ai_surveys_uniqueid_edit_page_question_types"
+    ],
+    "32": [
+      "app_utils_votercenterdata",
+      "app_utils_votercenterdata_filtercentersbylocation",
+      "app_utils_votercenterdata_getcenterbyid",
+      "app_utils_votercenterdata_gettotalcenters",
+      "app_utils_votercenterdata_gettotalfemalevoters",
+      "app_utils_votercenterdata_gettotalmalevoters",
+      "app_utils_votercenterdata_gettotalvotersincenters",
+      "app_utils_votercenterdata_votercenters"
+    ],
+    "33": [
+      "components_ui_select",
+      "components_ui_select_selectcontent",
+      "components_ui_select_selectitem",
+      "components_ui_select_selectlabel",
+      "components_ui_select_selectscrolldownbutton",
+      "components_ui_select_selectscrollupbutton",
+      "components_ui_select_selectseparator",
+      "components_ui_select_selecttrigger"
+    ],
+    "34": [
+      "components_ui_card",
+      "components_ui_card_card",
+      "components_ui_card_cardcontent",
+      "components_ui_card_carddescription",
+      "components_ui_card_cardfooter",
+      "components_ui_card_cardheader",
+      "components_ui_card_cardtitle"
+    ],
+    "35": [
+      "app_components_employee_role_roleaddmodal",
+      "app_components_employee_role_roleaddmodal_roleaddmodal",
+      "app_components_employee_role_roleeditmodal",
+      "app_components_employee_role_roleeditmodal_roleeditmodal",
+      "app_components_employee_role_viewtable",
+      "app_components_employee_role_viewtable_viewtable"
+    ],
+    "36": [
+      "app_components_event_target_groups_eventtargetgroupaddmodal",
+      "app_components_event_target_groups_eventtargetgroupaddmodal_eventtargetgroupaddmodal",
+      "app_components_event_target_groups_eventtargetgroupeditmodal",
+      "app_components_event_target_groups_eventtargetgroupeditmodal_eventtargetgroupeditmodal",
+      "app_components_event_target_groups_viewtable",
+      "app_components_event_target_groups_viewtable_viewtable"
+    ],
+    "37": [
+      "app_components_event_types_eventtypeaddmodal",
+      "app_components_event_types_eventtypeaddmodal_eventtypeaddmodal",
+      "app_components_event_types_eventtypeeditmodal",
+      "app_components_event_types_eventtypeeditmodal_eventtypeeditmodal",
+      "app_components_event_types_viewtable_jsx_app_components_event_types_viewtable_172c57",
+      "app_components_event_types_viewtable_jsx_app_components_event_types_viewtable_viewtable_172c57"
+    ],
+    "38": [
+      "app_components_event_types_eventtypesaddmodal",
+      "app_components_event_types_eventtypesaddmodal_eventtypesaddmodal",
+      "app_components_event_types_eventtypeseditmodal",
+      "app_components_event_types_eventtypeseditmodal_eventtypeseditmodal",
+      "app_components_event_types_viewtable_jsx_app_components_event_types_viewtable_ba8522",
+      "app_components_event_types_viewtable_jsx_app_components_event_types_viewtable_viewtable_ba8522"
+    ],
+    "39": [
+      "app_components_region_regionaddmodal",
+      "app_components_region_regionaddmodal_regionaddmodal",
+      "app_components_region_regioneditmodal",
+      "app_components_region_regioneditmodal_regioneditmodal",
+      "app_components_region_viewtable",
+      "app_components_region_viewtable_viewtable"
+    ],
+    "40": [
+      "app_components_team_teamaddmodal",
+      "app_components_team_teamaddmodal_teamaddmodal",
+      "app_components_team_teameditmodal",
+      "app_components_team_teameditmodal_teameditmodal",
+      "app_components_team_viewtable",
+      "app_components_team_viewtable_viewtable"
+    ],
+    "41": [
+      "app_components_territory_territoryaddmodal",
+      "app_components_territory_territoryaddmodal_territoryaddmodal",
+      "app_components_territory_territoryeditmodal",
+      "app_components_territory_territoryeditmodal_territoryeditmodal",
+      "app_components_territory_viewtable",
+      "app_components_territory_viewtable_viewtable"
+    ],
+    "42": [
+      "app_components_user_useraddmodal",
+      "app_components_user_useraddmodal_useraddmodal",
+      "app_components_user_usereditmodal",
+      "app_components_user_usereditmodal_usereditmodal",
+      "app_components_user_viewtable",
+      "app_components_user_viewtable_viewtable"
+    ],
+    "43": [
+      "app_main_users_view_page",
+      "app_main_users_view_page_fetchdesignations",
+      "app_main_users_view_page_fetchlocations",
+      "app_main_users_view_page_fetchpolicies",
+      "app_main_users_view_page_fetchuserroles",
+      "app_main_users_view_page_page"
+    ],
+    "44": [
+      "app_main_volunteer_view_page",
+      "app_main_volunteer_view_page_fetchdesignations",
+      "app_main_volunteer_view_page_fetchlocations",
+      "app_main_volunteer_view_page_fetchpolicies",
+      "app_main_volunteer_view_page_fetchuserroles",
+      "app_main_volunteer_view_page_page"
+    ],
+    "45": [
+      "app_main_voter_management_overview_page",
+      "app_main_voter_management_overview_page_bengalitoenglishnumber",
+      "app_main_voter_management_overview_page_card",
+      "app_main_voter_management_overview_page_englishtobengalinumber",
+      "app_main_voter_management_overview_page_votermap",
+      "app_main_voter_management_overview_page_voteroverviewpage"
+    ],
+    "46": [
+      "middleware",
+      "middleware_authroutes",
+      "middleware_config",
+      "middleware_middleware",
+      "middleware_protectedroutes",
+      "middleware_publicroutes"
+    ],
+    "47": [
+      "app_components_voter_votecentremodal",
+      "app_components_voter_votecentremodal_votecentremodal",
+      "app_main_voter_management_vote_centres_page",
+      "app_main_voter_management_vote_centres_page_bengalitoenglishnumber",
+      "app_main_voter_management_vote_centres_page_votecentres"
+    ],
+    "48": [
+      "app_frontapi_candidates_path_route",
+      "app_frontapi_candidates_path_route_delete",
+      "app_frontapi_candidates_path_route_get",
+      "app_frontapi_candidates_path_route_post",
+      "app_frontapi_candidates_path_route_put"
+    ],
+    "49": [
+      "app_frontapi_designation_route",
+      "app_frontapi_designation_route_delete",
+      "app_frontapi_designation_route_forwardjson",
+      "app_frontapi_designation_route_patch",
+      "app_frontapi_designation_route_post"
+    ],
+    "50": [
+      "app_frontapi_employee_volunteer_team_route",
+      "app_frontapi_employee_volunteer_team_route_delete",
+      "app_frontapi_employee_volunteer_team_route_get",
+      "app_frontapi_employee_volunteer_team_route_patch",
+      "app_frontapi_employee_volunteer_team_route_post"
+    ],
+    "51": [
+      "app_frontapi_event_target_groups_route",
+      "app_frontapi_event_target_groups_route_delete",
+      "app_frontapi_event_target_groups_route_get",
+      "app_frontapi_event_target_groups_route_patch",
+      "app_frontapi_event_target_groups_route_post"
+    ],
+    "52": [
+      "app_frontapi_event_types_route",
+      "app_frontapi_event_types_route_delete",
+      "app_frontapi_event_types_route_get",
+      "app_frontapi_event_types_route_patch",
+      "app_frontapi_event_types_route_post"
+    ],
+    "53": [
+      "app_frontapi_organizers_route",
+      "app_frontapi_organizers_route_delete",
+      "app_frontapi_organizers_route_get",
+      "app_frontapi_organizers_route_patch",
+      "app_frontapi_organizers_route_post"
+    ],
+    "54": [
+      "app_frontapi_voters_id_route",
+      "app_frontapi_voters_id_route_delete",
+      "app_frontapi_voters_id_route_get",
+      "app_frontapi_voters_id_route_patch",
+      "app_frontapi_voters_id_route_put"
+    ],
+    "55": [
+      "app_main_attendance_report_all_page",
+      "app_main_attendance_report_all_page_fetchareas",
+      "app_main_attendance_report_all_page_fetchlocations",
+      "app_main_attendance_report_all_page_fetchusers",
+      "app_main_attendance_report_all_page_page"
+    ],
+    "56": [
+      "app_main_attendance_report_custom_page",
+      "app_main_attendance_report_custom_page_fetchareas",
+      "app_main_attendance_report_custom_page_fetchlocations",
+      "app_main_attendance_report_custom_page_fetchusers",
+      "app_main_attendance_report_custom_page_page"
+    ],
+    "57": [
+      "app_main_attendance_report_daily_page",
+      "app_main_attendance_report_daily_page_fetchareas",
+      "app_main_attendance_report_daily_page_fetchlocations",
+      "app_main_attendance_report_daily_page_fetchusers",
+      "app_main_attendance_report_daily_page_page"
+    ],
+    "58": [
+      "app_main_event_view_page",
+      "app_main_event_view_page_fetchpolicies",
+      "app_main_event_view_page_fetchusers",
+      "app_main_event_view_page_fetchvolunteerteams",
+      "app_main_event_view_page_page"
+    ],
+    "59": [
+      "app_main_tasks_set_page",
+      "app_main_tasks_set_page_fetchpolicies",
+      "app_main_tasks_set_page_fetchsetpolicies",
+      "app_main_tasks_set_page_fetchusers",
+      "app_main_tasks_set_page_page"
+    ],
+    "60": [
+      "app_main_tasks_view_page",
+      "app_main_tasks_view_page_fetchtasks",
+      "app_main_tasks_view_page_fetchusers",
+      "app_main_tasks_view_page_fetchvolunteerteams",
+      "app_main_tasks_view_page_page"
+    ],
+    "61": [
+      "components_ui_alert",
+      "components_ui_alert_alert",
+      "components_ui_alert_alertdescription",
+      "components_ui_alert_alerttitle",
+      "components_ui_alert_alertvariants"
+    ],
+    "62": [
+      "app_frontapi_area_route",
+      "app_frontapi_area_route_delete",
+      "app_frontapi_area_route_patch",
+      "app_frontapi_area_route_post"
+    ],
+    "63": [
+      "app_frontapi_class_route",
+      "app_frontapi_class_route_delete",
+      "app_frontapi_class_route_patch",
+      "app_frontapi_class_route_post"
+    ],
+    "64": [
+      "app_frontapi_designation_set_route",
+      "app_frontapi_designation_set_route_delete",
+      "app_frontapi_designation_set_route_patch",
+      "app_frontapi_designation_set_route_put"
+    ],
+    "65": [
+      "app_frontapi_employee_permission_route",
+      "app_frontapi_employee_permission_route_delete",
+      "app_frontapi_employee_permission_route_patch",
+      "app_frontapi_employee_permission_route_post"
+    ],
+    "66": [
+      "app_frontapi_employee_role_route",
+      "app_frontapi_employee_role_route_delete",
+      "app_frontapi_employee_role_route_patch",
+      "app_frontapi_employee_role_route_post"
+    ],
+    "67": [
+      "app_frontapi_employee_route",
+      "app_frontapi_employee_route_delete",
+      "app_frontapi_employee_route_patch",
+      "app_frontapi_employee_route_post"
+    ],
+    "68": [
+      "app_frontapi_employee_volunteer_team_set_route",
+      "app_frontapi_employee_volunteer_team_set_route_delete",
+      "app_frontapi_employee_volunteer_team_set_route_patch",
+      "app_frontapi_employee_volunteer_team_set_route_post"
+    ],
+    "69": [
+      "app_frontapi_event_route",
+      "app_frontapi_event_route_delete",
+      "app_frontapi_event_route_patch",
+      "app_frontapi_event_route_post"
+    ],
+    "70": [
+      "app_frontapi_holiday_route",
+      "app_frontapi_holiday_route_delete",
+      "app_frontapi_holiday_route_patch",
+      "app_frontapi_holiday_route_post"
+    ],
+    "71": [
+      "app_frontapi_holiday_set_route",
+      "app_frontapi_holiday_set_route_delete",
+      "app_frontapi_holiday_set_route_patch",
+      "app_frontapi_holiday_set_route_post"
+    ],
+    "72": [
+      "app_frontapi_region_route",
+      "app_frontapi_region_route_delete",
+      "app_frontapi_region_route_patch",
+      "app_frontapi_region_route_post"
+    ],
+    "73": [
+      "app_frontapi_resources_route",
+      "app_frontapi_resources_route_delete",
+      "app_frontapi_resources_route_patch",
+      "app_frontapi_resources_route_post"
+    ],
+    "74": [
+      "app_frontapi_rff_route",
+      "app_frontapi_rff_route_delete",
+      "app_frontapi_rff_route_patch",
+      "app_frontapi_rff_route_post"
+    ],
+    "75": [
+      "app_frontapi_social_analytics_route",
+      "app_frontapi_social_analytics_route_delete",
+      "app_frontapi_social_analytics_route_get",
+      "app_frontapi_social_analytics_route_post"
+    ],
+    "76": [
+      "app_frontapi_surveys_uniqueid_manage_route",
+      "app_frontapi_surveys_uniqueid_manage_route_delete",
+      "app_frontapi_surveys_uniqueid_manage_route_get",
+      "app_frontapi_surveys_uniqueid_manage_route_put"
+    ],
+    "77": [
+      "app_frontapi_surveys_uniqueid_route",
+      "app_frontapi_surveys_uniqueid_route_delete",
+      "app_frontapi_surveys_uniqueid_route_get",
+      "app_frontapi_surveys_uniqueid_route_put"
+    ],
+    "78": [
+      "app_frontapi_tasks_route",
+      "app_frontapi_tasks_route_delete",
+      "app_frontapi_tasks_route_patch",
+      "app_frontapi_tasks_route_post"
+    ],
+    "79": [
+      "app_frontapi_tasks_set_route",
+      "app_frontapi_tasks_set_route_delete",
+      "app_frontapi_tasks_set_route_patch",
+      "app_frontapi_tasks_set_route_post"
+    ],
+    "80": [
+      "app_frontapi_team_route",
+      "app_frontapi_team_route_delete",
+      "app_frontapi_team_route_patch",
+      "app_frontapi_team_route_post"
+    ],
+    "81": [
+      "app_frontapi_territory_route",
+      "app_frontapi_territory_route_delete",
+      "app_frontapi_territory_route_patch",
+      "app_frontapi_territory_route_post"
+    ],
+    "82": [
+      "app_frontapi_user_route",
+      "app_frontapi_user_route_delete",
+      "app_frontapi_user_route_patch",
+      "app_frontapi_user_route_post"
+    ],
+    "83": [
+      "app_main_campaign_overview_overviewclient",
+      "app_main_campaign_overview_overviewclient_overviewclient",
+      "app_main_campaign_overview_page",
+      "app_main_campaign_overview_page_overview"
+    ],
+    "84": [
+      "app_main_communication_email_page",
+      "app_main_communication_email_page_fetchteams",
+      "app_main_communication_email_page_fetchusers",
+      "app_main_communication_email_page_page"
+    ],
+    "85": [
+      "app_main_tasks_holidays_page",
+      "app_main_tasks_holidays_page_fetchholidays",
+      "app_main_tasks_holidays_page_fetchusers",
+      "app_main_tasks_holidays_page_page"
+    ],
+    "86": [
+      "app_main_volunteer_designation_page",
+      "app_main_volunteer_designation_page_fetchdesignations",
+      "app_main_volunteer_designation_page_fetchusers",
+      "app_main_volunteer_designation_page_page"
+    ],
+    "87": [
+      "app_main_volunteer_roles_page",
+      "app_main_volunteer_roles_page_fetchpermissions",
+      "app_main_volunteer_roles_page_fetchroles",
+      "app_main_volunteer_roles_page_page"
+    ],
+    "88": [
+      "app_main_volunteer_team_page",
+      "app_main_volunteer_team_page_fetchteams",
+      "app_main_volunteer_team_page_fetchusers",
+      "app_main_volunteer_team_page_page"
+    ],
+    "89": [
+      "jsconfig",
+      "jsconfig_compileroptions",
+      "jsconfig_compileroptions_paths",
+      "jsconfig_paths"
+    ],
+    "90": [
+      "app_components_employee_overview",
+      "app_components_employee_overview_iconmap",
+      "app_components_employee_overview_overview"
+    ],
+    "91": [
+      "app_frontapi_campaign_milestones_id_route",
+      "app_frontapi_campaign_milestones_id_route_delete",
+      "app_frontapi_campaign_milestones_id_route_patch"
+    ],
+    "92": [
+      "app_frontapi_campaign_milestones_route",
+      "app_frontapi_campaign_milestones_route_get",
+      "app_frontapi_campaign_milestones_route_post"
+    ],
+    "93": [
+      "app_frontapi_campaigns_id_route",
+      "app_frontapi_campaigns_id_route_delete",
+      "app_frontapi_campaigns_id_route_patch"
+    ],
+    "94": [
+      "app_frontapi_campaigns_route",
+      "app_frontapi_campaigns_route_get",
+      "app_frontapi_campaigns_route_post"
+    ],
+    "95": [
+      "app_frontapi_candidates_route",
+      "app_frontapi_candidates_route_get",
+      "app_frontapi_candidates_route_post"
+    ],
+    "96": [
+      "app_frontapi_command_center_agents_route",
+      "app_frontapi_command_center_agents_route_get",
+      "app_frontapi_command_center_agents_route_post"
+    ],
+    "97": [
+      "app_frontapi_command_center_incidents_route",
+      "app_frontapi_command_center_incidents_route_get",
+      "app_frontapi_command_center_incidents_route_post"
+    ],
+    "98": [
+      "app_frontapi_event_teams_set_route",
+      "app_frontapi_event_teams_set_route_delete",
+      "app_frontapi_event_teams_set_route_post"
+    ],
+    "99": [
+      "app_frontapi_events_id_resources_route",
+      "app_frontapi_events_id_resources_route_get",
+      "app_frontapi_events_id_resources_route_post"
+    ],
+    "100": [
+      "app_frontapi_login_route",
+      "app_frontapi_login_route_parsedurationinseconds",
+      "app_frontapi_login_route_post"
+    ],
+    "101": [
+      "app_frontapi_surveys_route",
+      "app_frontapi_surveys_route_get",
+      "app_frontapi_surveys_route_post"
+    ],
+    "102": [
+      "app_frontapi_vote_centres_id_route",
+      "app_frontapi_vote_centres_id_route_delete",
+      "app_frontapi_vote_centres_id_route_put"
+    ],
+    "103": [
+      "app_frontapi_vote_centres_route",
+      "app_frontapi_vote_centres_route_get",
+      "app_frontapi_vote_centres_route_post"
+    ],
+    "104": [
+      "app_frontapi_voters_route",
+      "app_frontapi_voters_route_get",
+      "app_frontapi_voters_route_post"
+    ],
+    "105": [
+      "app_main_communication_sms_page",
+      "app_main_communication_sms_page_fetchusers",
+      "app_main_communication_sms_page_page"
+    ],
+    "106": [
+      "app_main_event_target_groups_view_page",
+      "app_main_event_target_groups_view_page_fetcheventtargetgroups",
+      "app_main_event_target_groups_view_page_page"
+    ],
+    "107": [
+      "app_main_event_types_page",
+      "app_main_event_types_page_fetcheventtypes",
+      "app_main_event_types_page_page"
+    ],
+    "108": [
+      "app_main_location_division_view_page",
+      "app_main_location_division_view_page_fetchdivisions",
+      "app_main_location_division_view_page_page"
+    ],
+    "109": [
+      "app_main_location_union_view_page",
+      "app_main_location_union_view_page_fetchdata",
+      "app_main_location_union_view_page_page"
+    ],
+    "110": [
+      "app_main_location_ward_view_page",
+      "app_main_location_ward_view_page_fetchdata",
+      "app_main_location_ward_view_page_page"
+    ],
+    "111": [
+      "app_main_organizers_view_page",
+      "app_main_organizers_view_page_fetchorganizers",
+      "app_main_organizers_view_page_page"
+    ],
+    "112": [
+      "app_main_volunteer_permissions_page",
+      "app_main_volunteer_permissions_page_fetchpermissions",
+      "app_main_volunteer_permissions_page_page"
+    ],
+    "113": [
+      "app_survey_uniqueid_layout",
+      "app_survey_uniqueid_layout_generatemetadata",
+      "app_survey_uniqueid_layout_layout"
+    ],
+    "114": [
+      "app_candidate_layout",
+      "app_candidate_layout_candidateroutelayout"
+    ],
+    "115": [
+      "app_components_center_centercard",
+      "app_components_center_centercard_centercard"
+    ],
+    "116": [
+      "app_components_command_center_mapcomponent",
+      "app_components_command_center_mapcomponent_mapcomponent"
+    ],
+    "117": [
+      "app_components_communication_email_viewtable",
+      "app_components_communication_email_viewtable_viewtable"
+    ],
+    "118": [
+      "app_components_communication_sms_viewtable",
+      "app_components_communication_sms_viewtable_viewtable"
+    ],
+    "119": [
+      "app_components_dashboard_attendancepiechart",
+      "app_components_dashboard_attendancepiechart_attendancepiechart"
+    ],
+    "120": [
+      "app_components_errormessage",
+      "app_components_errormessage_errormessage"
+    ],
+    "121": [
+      "app_components_event_addresourcetoeventmodal",
+      "app_components_event_addresourcetoeventmodal_addresourcetoeventmodal"
+    ],
+    "122": [
+      "app_components_nodata",
+      "app_components_nodata_nodata"
+    ],
+    "123": [
+      "app_components_voter_overview_votermap",
+      "app_components_voter_overview_votermap_votermap"
+    ],
+    "124": [
+      "app_frontapi_auth_me_route",
+      "app_frontapi_auth_me_route_get"
+    ],
+    "125": [
+      "app_frontapi_command_center_assign_route",
+      "app_frontapi_command_center_assign_route_post"
+    ],
+    "126": [
+      "app_frontapi_command_center_attendance_route",
+      "app_frontapi_command_center_attendance_route_post"
+    ],
+    "127": [
+      "app_frontapi_command_center_incidents_id_resolve_route",
+      "app_frontapi_command_center_incidents_id_resolve_route_put"
+    ],
+    "128": [
+      "app_frontapi_command_center_map_route",
+      "app_frontapi_command_center_map_route_get"
+    ],
+    "129": [
+      "app_frontapi_command_center_stats_route",
+      "app_frontapi_command_center_stats_route_get"
+    ],
+    "130": [
+      "app_frontapi_command_center_upload_route",
+      "app_frontapi_command_center_upload_route_post"
+    ],
+    "131": [
+      "app_frontapi_command_center_vote_centres_route",
+      "app_frontapi_command_center_vote_centres_route_get"
+    ],
+    "132": [
+      "app_frontapi_communication_sms_route",
+      "app_frontapi_communication_sms_route_post"
+    ],
+    "133": [
+      "app_frontapi_dashboard_stats_route",
+      "app_frontapi_dashboard_stats_route_get"
+    ],
+    "134": [
+      "app_frontapi_device_route",
+      "app_frontapi_device_route_delete"
+    ],
+    "135": [
+      "app_frontapi_employee_volunteer_team_remove_member_route",
+      "app_frontapi_employee_volunteer_team_remove_member_route_post"
+    ],
+    "136": [
+      "app_frontapi_event_resources_id_route",
+      "app_frontapi_event_resources_id_route_delete"
+    ],
+    "137": [
+      "app_frontapi_logout_route",
+      "app_frontapi_logout_route_post"
+    ],
+    "138": [
+      "app_frontapi_messages_team_route",
+      "app_frontapi_messages_team_route_post"
+    ],
+    "139": [
+      "app_frontapi_policy_status_route",
+      "app_frontapi_policy_status_route_patch"
+    ],
+    "140": [
+      "app_frontapi_surveys_generate_route",
+      "app_frontapi_surveys_generate_route_post"
+    ],
+    "141": [
+      "app_frontapi_surveys_uniqueid_analytics_route",
+      "app_frontapi_surveys_uniqueid_analytics_route_get"
+    ],
+    "142": [
+      "app_frontapi_surveys_uniqueid_submit_route",
+      "app_frontapi_surveys_uniqueid_submit_route_post"
+    ],
+    "143": [
+      "app_frontapi_voters_stats_route",
+      "app_frontapi_voters_stats_route_get"
+    ],
+    "144": [
+      "next_config",
+      "next_config_nextconfig"
+    ],
+    "145": [
+      "postcss_config",
+      "postcss_config_config"
+    ],
+    "146": [
+      "tailwind_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.05128205128205128,
+    "1": 0.0855614973262032,
+    "2": 0.1476923076923077,
+    "3": 0.08695652173913043,
+    "4": 0.1067193675889328,
+    "5": 0.11255411255411256,
+    "6": 0.17894736842105263,
+    "7": 0.1695906432748538,
+    "8": 0.1111111111111111,
+    "9": 0.16176470588235295,
+    "10": 0.15441176470588236,
+    "11": 0.175,
+    "12": 0.21666666666666667,
+    "13": 0.24175824175824176,
+    "14": 0.21794871794871795,
+    "15": 0.22727272727272727,
+    "16": 0.18181818181818182,
+    "17": 0.21818181818181817,
+    "18": 0.2222222222222222,
+    "19": 0.2,
+    "20": 0.2222222222222222,
+    "21": 0.2222222222222222,
+    "22": 0.4166666666666667,
+    "23": 0.2222222222222222,
+    "24": 0.35714285714285715,
+    "25": 0.42857142857142855,
+    "26": 0.35714285714285715,
+    "27": 0.2857142857142857,
+    "28": 0.42857142857142855,
+    "29": 0.42857142857142855,
+    "30": 0.35714285714285715,
+    "31": 0.25,
+    "32": 0.25,
+    "33": 0.25,
+    "34": 0.2857142857142857,
+    "35": 0.4666666666666667,
+    "36": 0.4666666666666667,
+    "37": 0.4666666666666667,
+    "38": 0.4666666666666667,
+    "39": 0.4666666666666667,
+    "40": 0.4666666666666667,
+    "41": 0.4666666666666667,
+    "42": 0.4666666666666667,
+    "43": 0.6,
+    "44": 0.6,
+    "45": 0.4,
+    "46": 0.3333333333333333,
+    "47": 0.4,
+    "48": 0.4,
+    "49": 0.6,
+    "50": 0.4,
+    "51": 0.4,
+    "52": 0.4,
+    "53": 0.4,
+    "54": 0.4,
+    "55": 0.7,
+    "56": 0.7,
+    "57": 0.7,
+    "58": 0.7,
+    "59": 0.7,
+    "60": 0.7,
+    "61": 0.4,
+    "62": 0.5,
+    "63": 0.5,
+    "64": 0.5,
+    "65": 0.5,
+    "66": 0.5,
+    "67": 0.5,
+    "68": 0.5,
+    "69": 0.5,
+    "70": 0.5,
+    "71": 0.5,
+    "72": 0.5,
+    "73": 0.5,
+    "74": 0.5,
+    "75": 0.5,
+    "76": 0.5,
+    "77": 0.5,
+    "78": 0.5,
+    "79": 0.5,
+    "80": 0.5,
+    "81": 0.5,
+    "82": 0.5,
+    "83": 0.6666666666666666,
+    "84": 0.8333333333333334,
+    "85": 0.8333333333333334,
+    "86": 0.8333333333333334,
+    "87": 0.8333333333333334,
+    "88": 0.8333333333333334,
+    "89": 0.5,
+    "90": 0.6666666666666666,
+    "91": 0.6666666666666666,
+    "92": 0.6666666666666666,
+    "93": 0.6666666666666666,
+    "94": 0.6666666666666666,
+    "95": 0.6666666666666666,
+    "96": 0.6666666666666666,
+    "97": 0.6666666666666666,
+    "98": 0.6666666666666666,
+    "99": 0.6666666666666666,
+    "100": 1.0,
+    "101": 0.6666666666666666,
+    "102": 0.6666666666666666,
+    "103": 0.6666666666666666,
+    "104": 0.6666666666666666,
+    "105": 1.0,
+    "106": 1.0,
+    "107": 1.0,
+    "108": 1.0,
+    "109": 1.0,
+    "110": 1.0,
+    "111": 1.0,
+    "112": 1.0,
+    "113": 0.6666666666666666,
+    "114": 1.0,
+    "115": 1.0,
+    "116": 1.0,
+    "117": 1.0,
+    "118": 1.0,
+    "119": 1.0,
+    "120": 1.0,
+    "121": 1.0,
+    "122": 1.0,
+    "123": 1.0,
+    "124": 1.0,
+    "125": 1.0,
+    "126": 1.0,
+    "127": 1.0,
+    "128": 1.0,
+    "129": 1.0,
+    "130": 1.0,
+    "131": 1.0,
+    "132": 1.0,
+    "133": 1.0,
+    "134": 1.0,
+    "135": 1.0,
+    "136": 1.0,
+    "137": 1.0,
+    "138": 1.0,
+    "139": 1.0,
+    "140": 1.0,
+    "141": 1.0,
+    "142": 1.0,
+    "143": 1.0,
+    "144": 1.0,
+    "145": 1.0,
+    "146": 1.0
+  },
+  "gods": [
+    {
+      "id": "app_hooks_useconfirmdelete_useconfirmdelete",
+      "label": "useConfirmDelete()",
+      "degree": 27
+    },
+    {
+      "id": "app_utils_helpers_getauthtoken",
+      "label": "getAuthToken()",
+      "degree": 22
+    },
+    {
+      "id": "app_components_pagination_pagination",
+      "label": "Pagination()",
+      "degree": 18
+    },
+    {
+      "id": "app_components_permissiongate_permissiongate",
+      "label": "PermissionGate()",
+      "degree": 15
+    },
+    {
+      "id": "kimchi_skills_graphify_skill_graphify",
+      "label": "Graphify Skill",
+      "degree": 15
+    },
+    {
+      "id": "app_context_auth_context_useauthcontext",
+      "label": "useAuthContext()",
+      "degree": 14
+    },
+    {
+      "id": "app_utils_voterapi_getauthheaders",
+      "label": "getAuthHeaders()",
+      "degree": 8
+    },
+    {
+      "id": "readme_remark_attendance_front",
+      "label": "Remark Attendance Front Project",
+      "degree": 8
+    },
+    {
+      "id": "lib_utils_cn",
+      "label": "cn()",
+      "degree": 7
+    },
+    {
+      "id": "kimchi_skills_graphify_skill_pipeline",
+      "label": "Graphify Extraction Pipeline",
+      "degree": 7
+    }
+  ],
+  "surprises": [
+    {
+      "source": "QP Image",
+      "target": "Remark Attendance Front Project",
+      "source_files": [
+        "app/public/images/qp.png",
+        "README.md"
+      ],
+      "confidence": "AMBIGUOUS",
+      "relation": "conceptually_related_to",
+      "why": "ambiguous connection - not explicitly stated in source; crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `QP Image` unexpectedly reaches hub `Remark Attendance Front Project`"
+    },
+    {
+      "source": "AEB Logo Image",
+      "target": "Remark Attendance Front Project",
+      "source_files": [
+        "app/public/images/aeb_logo.png",
+        "README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `AEB Logo Image` unexpectedly reaches hub `Remark Attendance Front Project`"
+    },
+    {
+      "source": "BNP Logo Image",
+      "target": "Remark Attendance Front Project",
+      "source_files": [
+        "app/public/images/bnp_logo.png",
+        "README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `BNP Logo Image` unexpectedly reaches hub `Remark Attendance Front Project`"
+    },
+    {
+      "source": "No-Image Placeholder",
+      "target": "Remark Attendance Front Project",
+      "source_files": [
+        "app/public/images/no-image.png",
+        "README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `No-Image Placeholder` unexpectedly reaches hub `Remark Attendance Front Project`"
+    },
+    {
+      "source": "Remark Logo Image",
+      "target": "Remark Attendance Front Project",
+      "source_files": [
+        "app/public/images/remark.png",
+        "README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `Remark Logo Image` unexpectedly reaches hub `Remark Attendance Front Project`"
+    }
+  ],
+  "tokens": {
+    "input": 23501,
+    "output": 5809
+  }
+}

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
+import { getAllSlugs } from './data/candidates';
 
 // 1. Specify protected and public routes
 const protectedRoutes = ['/']; // Dashboard
@@ -9,15 +10,16 @@ const publicRoutes = ['/frontapi/auth/me', '/frontapi/login']; // API routes tha
 export function middleware(req) {
     // 2. Check for the auth token
     const path = req.nextUrl.pathname;
+    const candidateSlugs = getAllSlugs();
+    const isPublicPage = path === '/' || candidateSlugs.includes(path.replace(/^\//, ''));
     const isProtectedRoute =
-        path === '/' ||
-        (!path.startsWith('/auth') && !path.startsWith('/_next') && !path.startsWith('/static') && !path.startsWith('/favicon.ico'));
+        !path.startsWith('/auth') && !path.startsWith('/_next') && !path.startsWith('/static') && !path.startsWith('/favicon.ico');
 
     const isAuthRoute = authRoutes.includes(path);
     const isPublicApiRoute = publicRoutes.some(route => path.startsWith(route));
 
     // Skip middleware for Next.js internals, static files, public API routes, and survey page + API
-    if (path.startsWith('/_next') || path.startsWith('/static') || path.startsWith('/favicon.ico') || path.startsWith('/public') || isPublicApiRoute || path.startsWith('/survey') || path.startsWith('/frontapi/surveys')) {
+    if (isPublicPage || path.startsWith('/_next') || path.startsWith('/static') || path.startsWith('/favicon.ico') || path.startsWith('/public') || isPublicApiRoute || path.startsWith('/survey') || path.startsWith('/frontapi/surveys')) {
         return NextResponse.next();
     }
 
@@ -32,7 +34,7 @@ export function middleware(req) {
 
     if (isAuthRoute && token) {
         // If trying to access login page while already authenticated, redirect to dashboard
-        return NextResponse.redirect(new URL('/', req.nextUrl));
+        return NextResponse.redirect(new URL('/dashboard', req.nextUrl));
     }
 
     // 4. API Route Protection (Optional, but good practice)

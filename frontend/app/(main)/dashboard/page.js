@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from "react";
-import DefaultLayout from "./components/layout/DefaultLayout";
+import DefaultLayout from "../../components/layout/DefaultLayout";
 import ProtectedRoute from "@/app/components/ProtectedRoute";
-import Loader from "./components/Loader";
+import Loader from "../../components/Loader";
 import { useAuthContext } from "@/app/context/auth_context";
 import {
   FaUsers,
@@ -381,4 +381,3 @@ export default function DashboardPage() {
     </DefaultLayout>
   );
 }
-
