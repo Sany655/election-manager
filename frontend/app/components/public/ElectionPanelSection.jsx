@@ -61,9 +61,9 @@ export default function ElectionPanelSection() {
           {CANDIDATES.map((candidate) => (
             <Card
               key={candidate.slug}
-              className="group overflow-hidden border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="group flex h-full flex-col overflow-hidden border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="relative flex h-48 items-center justify-center bg-gradient-to-br from-teal-50 to-slate-100">
+              <div className="relative flex h-48 shrink-0 items-center justify-center bg-gradient-to-br from-teal-50 to-slate-100">
                 <Image
                   src={candidate.photo}
                   alt={candidate.name}
@@ -73,12 +73,12 @@ export default function ElectionPanelSection() {
                 />
                 <Badge
                   variant="default"
-                  className="absolute right-3 top-3 bg-amber-600 text-white hover:bg-amber-600"
+                  className="absolute right-3 top-3 bg-amber-600 text-white shadow-sm hover:bg-amber-600"
                 >
                   AEB
                 </Badge>
               </div>
-              <CardContent className="space-y-3 p-5">
+              <CardContent className="flex flex-1 flex-col gap-3 p-5">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-amber-600">
                     {candidate.position}
@@ -87,13 +87,13 @@ export default function ElectionPanelSection() {
                     {candidate.name}
                   </h3>
                 </div>
-                <div className="flex items-start gap-2 text-sm text-slate-600">
+                <div className="flex flex-1 items-start gap-2 text-sm text-slate-600">
                   <FaUserTie className="mt-1 shrink-0 text-slate-400" />
                   <span>{candidate.designation}</span>
                 </div>
                 <Link
                   href={`/${candidate.slug}`}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-teal-700 transition-colors hover:text-teal-900"
+                  className="mt-auto inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-amber-600 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2 active:scale-95"
                 >
                   View Profile
                   <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
